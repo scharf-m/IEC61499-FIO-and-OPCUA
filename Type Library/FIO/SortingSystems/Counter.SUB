@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="Counter" Comment="Subapplication Type">
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="Maximilian Scharf" Date="2022-12-21">
+	</VersionInfo>
+	<SubAppInterfaceList>
+		<SubAppEventInputs>
+			<SubAppEvent Name="EI1" Type="Event" Comment="">
+			</SubAppEvent>
+			<SubAppEvent Name="EI2" Type="Event" Comment="">
+			</SubAppEvent>
+			<SubAppEvent Name="Reset" Type="Event" Comment="">
+			</SubAppEvent>
+		</SubAppEventInputs>
+		<SubAppEventOutputs>
+			<SubAppEvent Name="valChange" Type="Event" Comment="">
+			</SubAppEvent>
+		</SubAppEventOutputs>
+		<OutputVars>
+			<VarDeclaration Name="CV" Type="UINT" Comment=""/>
+		</OutputVars>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<FB Name="E_MERGE" Type="E_MERGE" Comment="" x="2666.666666666667" y="-666.6666666666667">
+		</FB>
+		<FB Name="E_CTU" Type="E_CTU" Comment="" x="1333.3333333333335" y="-666.6666666666667">
+		</FB>
+		<FB Name="E_REND" Type="E_REND" Comment="" x="0.0" y="-1200.0">
+		</FB>
+		<Group Name="__Group01" Comment="This subFB counts  up, starting from 0, if two different input events (EI1 and EI2) arrived and returns a valChanged event is the counter Value CV has changed. " x="-666.6666666666667" y="666.6666666666667" width="2673.3333333333335" height="673.3333333333334">
+		</Group>
+		<EventConnections>
+			<Connection Source="E_CTU.CUO" Destination="E_MERGE.EI1" Comment=""/>
+			<Connection Source="E_CTU.RO" Destination="E_MERGE.EI2" Comment=""/>
+			<Connection Source="E_REND.EO" Destination="E_CTU.CU" Comment="" dx1="300.0"/>
+			<Connection Source="E_MERGE.EO" Destination="valChange" Comment="" dx1="140.0"/>
+			<Connection Source="Reset" Destination="E_CTU.R" Comment="" dx1="126.66666666666667"/>
+			<Connection Source="EI1" Destination="E_REND.EI1" Comment="" dx1="386.6666666666667"/>
+			<Connection Source="EI2" Destination="E_REND.EI2" Comment="" dx1="253.33333333333334"/>
+		</EventConnections>
+		<DataConnections>
+			<Connection Source="E_CTU.CV" Destination="CV" Comment="" dx1="1886.6666666666667"/>
+		</DataConnections>
+	</SubAppNetwork>
+</SubAppType>

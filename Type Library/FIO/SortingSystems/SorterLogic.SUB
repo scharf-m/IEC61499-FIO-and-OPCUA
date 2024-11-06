@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="SorterLogic" Comment="Subapplication Type">
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="Maximilian Scharf" Date="2023-02-03">
+	</VersionInfo>
+	<SubAppInterfaceList>
+		<SubAppEventInputs>
+			<SubAppEvent Name="IND" Type="Event" Comment="">
+			</SubAppEvent>
+			<SubAppEvent Name="C" Type="Event" Comment="">
+			</SubAppEvent>
+			<SubAppEvent Name="ResetC" Type="Event" Comment="">
+			</SubAppEvent>
+		</SubAppEventInputs>
+		<SubAppEventOutputs>
+			<SubAppEvent Name="CNF" Type="Event" Comment="">
+			</SubAppEvent>
+			<SubAppEvent Name="CNT" Type="Event" Comment="">
+			</SubAppEvent>
+		</SubAppEventOutputs>
+		<InputVars>
+			<VarDeclaration Name="value" Type="UINT" Comment=""/>
+			<VarDeclaration Name="PackageNum" Type="UINT" Comment=""/>
+			<VarDeclaration Name="AtExit" Type="BOOL" Comment=""/>
+		</InputVars>
+		<OutputVars>
+			<VarDeclaration Name="OUT" Type="BOOL" Comment=""/>
+			<VarDeclaration Name="CV" Type="UINT" Comment=""/>
+		</OutputVars>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<FB Name="BOOL2BOOL_22" Type="BOOL2BOOL" Comment="" x="5200.0" y="-933.3333333333334">
+		</FB>
+		<FB Name="UINT2UINT_2" Type="UINT2UINT" Comment="" x="0.0" y="-933.3333333333334">
+		</FB>
+		<FB Name="F_NE" Type="F_NE" Comment="" x="1333.3333333333335" y="0.0">
+			<Parameter Name="IN2" Value="UINT#0"/>
+		</FB>
+		<FB Name="E_R_TRIG_3" Type="E_R_TRIG" Comment="" x="2666.666666666667" y="0.0">
+		</FB>
+		<FB Name="F_EQ" Type="F_EQ" Comment="" x="4000.0" y="-933.3333333333334">
+		</FB>
+		<FB Name="UINT2UINT" Type="UINT2UINT" Comment="" x="0.0" y="-266.6666666666667">
+		</FB>
+		<FB Name="E_R_TRIG_4" Type="E_R_TRIG" Comment="" x="2666.666666666667" y="1333.3333333333335">
+		</FB>
+		<SubApp Name="Counter_3" Type="Counter" Comment="" x="5333.333333333334" y="1200.0">
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+		</SubApp>
+		<FB Name="F_EQ_1" Type="F_EQ" Comment="" x="1333.3333333333335" y="666.6666666666667">
+		</FB>
+		<FB Name="E_R_TRIG" Type="E_R_TRIG" Comment="" x="2666.666666666667" y="666.6666666666667">
+		</FB>
+		<EventConnections>
+			<Connection Source="F_EQ.CNF" Destination="BOOL2BOOL_22.REQ" Comment=""/>
+			<Connection Source="UINT2UINT_2.CNF" Destination="F_NE.REQ" Comment="" dx1="426.6666666666667"/>
+			<Connection Source="F_NE.CNF" Destination="E_R_TRIG_3.EI" Comment=""/>
+			<Connection Source="E_R_TRIG_3.EO" Destination="F_EQ.REQ" Comment="" dx1="313.33333333333337"/>
+			<Connection Source="BOOL2BOOL_22.CNF" Destination="CNF" Comment="" dx1="353.33333333333337"/>
+			<Connection Source="IND" Destination="UINT2UINT_2.REQ" Comment="" dx1="666.6666666666667"/>
+			<Connection Source="IND" Destination="UINT2UINT.REQ" Comment="" dx1="600.0"/>
+			<Connection Source="UINT2UINT_2.CNF" Destination="F_EQ_1.REQ" Comment="" dx1="153.33333333333334"/>
+			<Connection Source="E_R_TRIG_4.EO" Destination="Counter_3.EI2" Comment="" dx1="380.0"/>
+			<Connection Source="F_EQ_1.CNF" Destination="E_R_TRIG.EI" Comment=""/>
+			<Connection Source="E_R_TRIG.EO" Destination="Counter_3.EI1" Comment="" dx1="680.0"/>
+			<Connection Source="Counter_3.valChange" Destination="CNT" Comment="" dx1="360.0"/>
+			<Connection Source="C" Destination="E_R_TRIG_4.EI" Comment="" dx1="406.6666666666667"/>
+			<Connection Source="ResetC" Destination="Counter_3.Reset" Comment="" dx1="326.6666666666667"/>
+		</EventConnections>
+		<DataConnections>
+			<Connection Source="F_EQ.OUT" Destination="BOOL2BOOL_22.IN" Comment=""/>
+			<Connection Source="UINT2UINT_2.OUT" Destination="F_NE.IN1" Comment="" dx1="280.0"/>
+			<Connection Source="UINT2UINT_2.OUT" Destination="F_EQ.IN1" Comment=""/>
+			<Connection Source="F_NE.OUT" Destination="E_R_TRIG_3.QI" Comment=""/>
+			<Connection Source="BOOL2BOOL_22.OUT" Destination="OUT" Comment="" dx1="606.6666666666667"/>
+			<Connection Source="value" Destination="UINT2UINT_2.IN" Comment="" dx1="666.6666666666667"/>
+			<Connection Source="UINT2UINT.OUT" Destination="F_EQ.IN2" Comment="" dx1="220.0"/>
+			<Connection Source="PackageNum" Destination="UINT2UINT.IN" Comment="" dx1="600.0"/>
+			<Connection Source="UINT2UINT.OUT" Destination="F_EQ_1.IN2" Comment="" dx1="220.0"/>
+			<Connection Source="UINT2UINT_2.OUT" Destination="F_EQ_1.IN1" Comment="" dx1="153.33333333333334"/>
+			<Connection Source="F_EQ_1.OUT" Destination="E_R_TRIG.QI" Comment=""/>
+			<Connection Source="AtExit" Destination="E_R_TRIG_4.QI" Comment="" dx1="280.0"/>
+			<Connection Source="Counter_3.CV" Destination="CV" Comment="" dx1="360.0"/>
+		</DataConnections>
+	</SubAppNetwork>
+</SubAppType>

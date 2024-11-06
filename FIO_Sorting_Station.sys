@@ -1,0 +1,1628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System Name="FIO_Sorting_Station" Comment="">
+	<VersionInfo Version="1.0" Author="Maximilian Scharf" Date="2022-03-11">
+	</VersionInfo>
+	<Application Name="Sorting_Station" Comment="">
+		<SubAppNetwork>
+			<Group Name="__Group01" Comment="Human Machine Interface" x="-4106.666666666667" y="7293.333333333334" width="3713.3333333333335" height="6026.666666666667">
+			</Group>
+			<Group Name="__Group02" Comment="Sensors" x="-4100.0" y="4666.666666666667" width="3840.0" height="2140.0">
+			</Group>
+			<Group Name="__Group03" Comment="Factory IO data" x="-4000.0" y="2666.666666666667" width="1980.0" height="1606.6666666666667">
+			</Group>
+			<Group Name="__Group04" Comment="Aktuatoren" x="21200.0" y="4666.666666666667" width="2193.3333333333335" height="9313.333333333334">
+			</Group>
+			<Group Name="__Group05" Comment="Human Machine Interface" x="21200.0" y="14933.333333333334" width="2000.0" height="3180.0">
+			</Group>
+			<Group Name="__Group07" Comment="Factory IO data" x="21333.333333333336" y="2666.666666666667" width="2013.3333333333335" height="1606.6666666666667">
+			</Group>
+			<Group Name="__Group09" Comment="Counter Ticker" x="17333.333333333336" y="7046.666666666667" width="3773.3333333333335" height="5486.666666666667">
+			</Group>
+			<SubApp Name="FIO" Type="OPC_SUB_FIO" Comment="" x="646.6666666666667" y="0.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group03"/>
+			</SubApp>
+			<FB Name="E_R_TRIG" Type="E_R_TRIG" Comment="" x="0.0" y="6000.0">
+			</FB>
+			<FB Name="BOOL2BOOL" Type="BOOL2BOOL" Comment="" x="2720.0" y="1046.6666666666667">
+				<Attribute Name="GroupName" Type="STRING" Value="__Group02"/>
+			</FB>
+			<FB Name="BOOL2BOOL_1" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="2020.0">
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</FB>
+			<SubApp Name="UPC_PUB_FIO" Type="OPC_PUB_FIO" Comment="" x="666.6666666666667" y="153.33333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group07"/>
+			</SubApp>
+			<SubApp Name="Start_Light" Type="OPC_PUB_1_FixID" Comment="" x="653.3333333333334" y="20.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;start_light&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group05"/>
+			</SubApp>
+			<SubApp Name="Reset_Light" Type="OPC_PUB_1_FixID" Comment="" x="653.3333333333334" y="953.3333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;reset_light&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group05"/>
+			</SubApp>
+			<SubApp Name="Stop_Light" Type="OPC_PUB_1_FixID" Comment="" x="653.3333333333334" y="1886.6666666666667">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;stop_light&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group05"/>
+			</SubApp>
+			<SubApp Name="ENTRY_CONVEYOR" Type="OPC_PUB_1_FixID" Comment="" x="853.3333333333334" y="20.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;entry_conveyor&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group04"/>
+			</SubApp>
+			<SubApp Name="EXIT_CONVEYOR" Type="OPC_PUB_1_FixID" Comment="" x="853.3333333333334" y="953.3333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;exit_conveyor&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group04"/>
+			</SubApp>
+			<SubApp Name="At_Exit" Type="OPC_SUB_1_FixID" Comment="" x="766.6666666666667" y="933.3333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;at_exit&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group02"/>
+			</SubApp>
+			<SubApp Name="Vison_Sensor" Type="OPC_SUB_1_FixID" Comment="" x="800.0" y="20.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;vision_sensor&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group02"/>
+			</SubApp>
+			<SubApp Name="Stop" Type="OPC_SUB_1_FixID" Comment="" x="853.3333333333334" y="993.3333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;Stop&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</SubApp>
+			<SubApp Name="Reset" Type="OPC_SUB_1_FixID" Comment="" x="853.3333333333334" y="1926.6666666666667">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;reset&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</SubApp>
+			<SubApp Name="Emergency_Stop" Type="OPC_SUB_1_FixID" Comment="" x="853.3333333333334" y="2993.3333333333335">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;emergency_stop&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</SubApp>
+			<SubApp Name="Auto" Type="OPC_SUB_1_FixID" Comment="" x="853.3333333333334" y="4060.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;auto&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</SubApp>
+			<SubApp Name="Manual" Type="OPC_SUB_1_FixID" Comment="" x="853.3333333333334" y="4860.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;Manual&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</SubApp>
+			<FB Name="BOOL2BOOL_2" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="20.0">
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</FB>
+			<FB Name="BOOL2BOOL_3" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="1086.6666666666667">
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</FB>
+			<FB Name="BOOL2BOOL_4" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="3086.666666666667">
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</FB>
+			<FB Name="BOOL2BOOL_5" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="4153.333333333334">
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</FB>
+			<FB Name="BOOL2BOOL_6" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="4953.333333333334">
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</FB>
+			<FB Name="BOOL2BOOL_7" Type="BOOL2BOOL" Comment="" x="19866.666666666668" y="15600.0">
+				<Parameter Name="IN" Value="0"/>
+			</FB>
+			<FB Name="BOOL2BOOL_8" Type="BOOL2BOOL" Comment="" x="19866.666666666668" y="16400.0">
+				<Parameter Name="IN" Value="0"/>
+			</FB>
+			<FB Name="BOOL2BOOL_9" Type="BOOL2BOOL" Comment="" x="19866.666666666668" y="17333.333333333336">
+				<Parameter Name="IN" Value="0"/>
+			</FB>
+			<FB Name="BOOL2BOOL_10" Type="BOOL2BOOL" Comment="" x="20000.0" y="5200.0">
+				<Parameter Name="IN" Value="0"/>
+			</FB>
+			<FB Name="BOOL2BOOL_11" Type="BOOL2BOOL" Comment="" x="20000.0" y="6133.333333333334">
+				<Parameter Name="IN" Value="0"/>
+			</FB>
+			<SubApp Name="Start" Type="OPC_SUB_1_FixID" Comment="" x="866.6666666666667" y="40.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;start&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group01"/>
+			</SubApp>
+			<SubApp Name="STOP_BLADE" Type="OPC_PUB_1_FixID" Comment="" x="893.3333333333334" y="8020.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;stop_blade&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group04"/>
+			</SubApp>
+			<FB Name="BOOL2BOOL_18" Type="BOOL2BOOL" Comment="" x="19733.333333333336" y="13200.0">
+			</FB>
+			<FB Name="E_R_TRIG_2" Type="E_R_TRIG" Comment="" x="0.0" y="7600.0">
+			</FB>
+			<FB Name="Is_running" Type="E_RS" Comment="" x="1600.0" y="8000.0">
+			</FB>
+			<FB Name="E_F_TRIG" Type="E_F_TRIG" Comment="" x="0.0" y="8533.333333333334">
+			</FB>
+			<FB Name="Is_running_NOT" Type="F_NOT" Comment="" x="2800.0" y="8000.0">
+			</FB>
+			<FB Name="UINT2UINT" Type="F_DINT_TO_UINT" Comment="" x="2453.3333333333335" y="113.33333333333334">
+				<Attribute Name="GroupName" Type="STRING" Value="__Group02"/>
+			</FB>
+			<FB Name="E_R_TRIG_1" Type="E_R_TRIG" Comment="" x="0.0" y="9600.0">
+			</FB>
+			<SubApp Name="Sorter_1" Type="Sorter" Comment="" x="993.3333333333334" y="2220.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="Prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="CountVar" Value="&quot;counter_1&quot;"/>
+				<Parameter Name="BeltVar" Value="&quot;sorter_1_belt&quot;"/>
+				<Parameter Name="TurnVar" Value="&quot;sorter_1_turn&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group04"/>
+			</SubApp>
+			<SubApp Name="Sorter_2" Type="Sorter" Comment="" x="993.3333333333334" y="4086.666666666667">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="Prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="CountVar" Value="&quot;counter_2&quot;"/>
+				<Parameter Name="BeltVar" Value="&quot;sorter_2_belt&quot;"/>
+				<Parameter Name="TurnVar" Value="&quot;sorter_2_turn&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group04"/>
+			</SubApp>
+			<SubApp Name="Sorter_3" Type="Sorter" Comment="" x="993.3333333333334" y="5953.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="Prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="CountVar" Value="&quot;counter_3&quot;"/>
+				<Parameter Name="BeltVar" Value="&quot;sorter_3_belt&quot;"/>
+				<Parameter Name="TurnVar" Value="&quot;sorter_3_turn&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group04"/>
+			</SubApp>
+			<SubApp Name="OPC_PUB_1_FixID" Type="OPC_PUB_1_FixID" Comment="" x="5600.0" y="4266.666666666667">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_1&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_PUB_EX_1" Type="OPC_PUB_EX_1" Comment="" x="15600.0" y="4000.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_1_belt&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_PUB_EX_2" Type="OPC_PUB_EX_1" Comment="" x="15600.0" y="5200.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_1_turn&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_SUB_EX_4" Type="OPC_SUB_EX_1" Comment="" x="8400.0" y="4133.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_1&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_SUB_EX_5" Type="OPC_SUB_EX_1" Comment="" x="8533.333333333334" y="8400.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_2&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_PUB_EX_3" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="8133.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_2_belt&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_PUB_EX_4" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="9333.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_2_turn&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_PUB_EX_5" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="12400.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_3_belt&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_SUB_EX_6" Type="OPC_SUB_EX_1" Comment="" x="8533.333333333334" y="12533.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_3&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_PUB_EX_6" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="13600.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_3_turn&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_PUB_1_FixID_1" Type="OPC_PUB_1_FixID" Comment="" x="5600.0" y="8533.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_2&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_PUB_1_FixID_2" Type="OPC_PUB_1_FixID" Comment="" x="5600.0" y="12400.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;sorter_3&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<FB Name="F_SEL" Type="F_SEL" Comment="" x="2266.666666666667" y="5066.666666666667">
+				<Parameter Name="IN0" Value="UINT#1"/>
+			</FB>
+			<FB Name="UINT2UINT_1" Type="UINT2UINT" Comment="" x="3600.0" y="5200.0">
+			</FB>
+			<SubApp Name="SorterLogic" Type="SorterLogic" Comment="" x="11866.666666666668" y="4400.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="PackageNum" Value="UINT#1"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<FB Name="UINT2UINT_2" Type="UINT2UINT" Comment="" x="10133.333333333334" y="4533.333333333334">
+			</FB>
+			<FB Name="BOOL2BOOL_12" Type="BOOL2BOOL" Comment="" x="13466.666666666668" y="4533.333333333334">
+			</FB>
+			<FB Name="UINT2UINT_3" Type="UINT2UINT" Comment="" x="10000.0" y="8933.333333333334">
+			</FB>
+			<SubApp Name="SorterLogic_3" Type="SorterLogic" Comment="" x="12000.0" y="8800.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="PackageNum" Value="UINT#2"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<FB Name="BOOL2BOOL_13" Type="BOOL2BOOL" Comment="" x="13600.0" y="8933.333333333334">
+			</FB>
+			<FB Name="UINT2UINT_4" Type="UINT2UINT" Comment="" x="10000.0" y="13066.666666666668">
+			</FB>
+			<SubApp Name="SorterLogic_1" Type="SorterLogic" Comment="" x="11733.333333333334" y="12933.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="PackageNum" Value="UINT#3"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<FB Name="BOOL2BOOL_14" Type="BOOL2BOOL" Comment="" x="13333.333333333334" y="13066.666666666668">
+			</FB>
+			<SubApp Name="OPC_SUB_EX_7" Type="OPC_SUB_EX_1" Comment="" x="8400.0" y="5333.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;at_exit&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_SUB_1_FixID" Type="OPC_SUB_1_FixID" Comment="" x="486.6666666666667" y="266.6666666666667">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;C1&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group09"/>
+			</SubApp>
+			<SubApp Name="OPC_PUB_EX_7" Type="OPC_PUB_EX_1" Comment="" x="15600.0" y="6400.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;C1&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<FB Name="BOOL2BOOL_15" Type="BOOL2BOOL" Comment="" x="10000.0" y="5866.666666666667">
+			</FB>
+			<FB Name="UINT2UINT_5" Type="UINT2UINT" Comment="" x="13466.666666666668" y="6800.0">
+			</FB>
+			<FB Name="UINT2UINT_6" Type="UINT2UINT" Comment="" x="2353.3333333333335" y="266.6666666666667">
+				<Attribute Name="GroupName" Type="STRING" Value="__Group09"/>
+			</FB>
+			<SubApp Name="OPC_SUB_EX_8" Type="OPC_SUB_EX_1" Comment="" x="8460.0" y="9873.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;at_exit&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<FB Name="BOOL2BOOL_16" Type="BOOL2BOOL" Comment="" x="10060.0" y="10406.666666666668">
+			</FB>
+			<SubApp Name="OPC_SUB_EX_9" Type="OPC_SUB_EX_1" Comment="" x="8533.333333333334" y="14133.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;at_exit&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<FB Name="BOOL2BOOL_17" Type="BOOL2BOOL" Comment="" x="10133.333333333334" y="14666.666666666668">
+			</FB>
+			<FB Name="UINT2UINT_7" Type="UINT2UINT" Comment="" x="13600.0" y="11066.666666666668">
+			</FB>
+			<SubApp Name="OPC_PUB_EX_8" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="10666.666666666668">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;C2&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<FB Name="UINT2UINT_8" Type="UINT2UINT" Comment="" x="13600.0" y="15333.333333333334">
+			</FB>
+			<SubApp Name="OPC_PUB_EX_9" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="14933.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;C3&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<SubApp Name="OPC_SUB_1_FixID_1" Type="OPC_SUB_1_FixID" Comment="" x="353.33333333333337" y="1733.3333333333335">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;C2&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group09"/>
+			</SubApp>
+			<FB Name="UINT2UINT_9" Type="UINT2UINT" Comment="" x="2000.0" y="1886.6666666666667">
+				<Attribute Name="GroupName" Type="STRING" Value="__Group09"/>
+			</FB>
+			<SubApp Name="OPC_SUB_1_FixID_2" Type="OPC_SUB_1_FixID" Comment="" x="353.33333333333337" y="3200.0">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+				<Parameter Name="var1" Value="&quot;C3&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Attribute Name="GroupName" Type="STRING" Value="__Group09"/>
+			</SubApp>
+			<FB Name="UINT2UINT_10" Type="UINT2UINT" Comment="" x="2220.0" y="3200.0">
+				<Attribute Name="GroupName" Type="STRING" Value="__Group09"/>
+			</FB>
+			<SubApp Name="OPC_SUB_EX_1" Type="OPC_SUB_EX_1" Comment="" x="8400.0" y="6666.666666666667">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;reset&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<FB Name="BOOL2BOOL_19" Type="BOOL2BOOL" Comment="" x="10000.0" y="7066.666666666667">
+			</FB>
+			<FB Name="E_R_TRIG_3" Type="E_R_TRIG" Comment="" x="11226.666666666668" y="7020.0">
+			</FB>
+			<FB Name="BOOL2BOOL_20" Type="BOOL2BOOL" Comment="" x="10133.333333333334" y="11466.666666666668">
+			</FB>
+			<FB Name="E_R_TRIG_4" Type="E_R_TRIG" Comment="" x="11360.0" y="11420.0">
+			</FB>
+			<SubApp Name="OPC_SUB_EX_2" Type="OPC_SUB_EX_1" Comment="" x="8533.333333333334" y="11066.666666666668">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;reset&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<FB Name="BOOL2BOOL_21" Type="BOOL2BOOL" Comment="" x="10133.333333333334" y="16133.333333333334">
+			</FB>
+			<FB Name="E_R_TRIG_5" Type="E_R_TRIG" Comment="" x="11360.0" y="16086.666666666668">
+			</FB>
+			<SubApp Name="OPC_SUB_EX_3" Type="OPC_SUB_EX_1" Comment="" x="8533.333333333334" y="15733.333333333334">
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				<Parameter Name="QI" Value="1"/>
+				<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+				<Parameter Name="var1" Value="&quot;reset&quot;"/>
+				<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+				<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+				<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			</SubApp>
+			<EventConnections>
+				<Connection Source="BOOL2BOOL.CNF" Destination="E_R_TRIG.EI" Comment=""/>
+				<Connection Source="FIO.INITO" Destination="UPC_PUB_FIO.INIT" Comment="" dx1="4320.0" dx2="4320.0" dy="0.0"/>
+				<Connection Source="At_Exit.IND" Destination="BOOL2BOOL.REQ" Comment="" dx1="426.6666666666667" dx2="426.6666666666667" dy="0.0"/>
+				<Connection Source="Reset.IND" Destination="BOOL2BOOL_1.REQ" Comment="" dx1="460.0" dx2="460.0" dy="0.0"/>
+				<Connection Source="Stop.IND" Destination="BOOL2BOOL_3.REQ" Comment="" dx1="460.0" dx2="460.0" dy="0.0"/>
+				<Connection Source="Emergency_Stop.IND" Destination="BOOL2BOOL_4.REQ" Comment="" dx1="453.33333333333337" dx2="453.33333333333337" dy="0.0"/>
+				<Connection Source="Auto.IND" Destination="BOOL2BOOL_5.REQ" Comment="" dx1="386.6666666666667" dx2="386.6666666666667" dy="0.0"/>
+				<Connection Source="Manual.IND" Destination="BOOL2BOOL_6.REQ" Comment="" dx1="453.33333333333337" dx2="453.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_7.CNF" Destination="Start_Light.REQ" Comment="" dx1="626.6666666666667" dx2="626.6666666666667" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_8.CNF" Destination="Reset_Light.REQ" Comment="" dx1="626.6666666666667" dx2="626.6666666666667" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_9.CNF" Destination="Stop_Light.REQ" Comment="" dx1="626.6666666666667" dx2="626.6666666666667" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_10.CNF" Destination="ENTRY_CONVEYOR.REQ" Comment="" dx1="666.6666666666667" dx2="666.6666666666667" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_11.CNF" Destination="EXIT_CONVEYOR.REQ" Comment="" dx1="666.6666666666667" dx2="666.6666666666667" dy="0.0"/>
+				<Connection Source="Start.IND" Destination="BOOL2BOOL_2.REQ" Comment="" dx1="386.6666666666667" dx2="386.6666666666667" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_18.CNF" Destination="STOP_BLADE.REQ" Comment="" dx1="1153.3333333333335" dx2="1153.3333333333335" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_2.CNF" Destination="E_R_TRIG_2.EI" Comment="" dx1="426.6666666666667" dx2="426.6666666666667" dy="0.0"/>
+				<Connection Source="E_R_TRIG_2.EO" Destination="Is_running.S" Comment="" dx1="453.33333333333337" dx2="453.33333333333337" dy="0.0"/>
+				<Connection Source="Is_running.EO" Destination="BOOL2BOOL_7.REQ" Comment="" dx1="8866.666666666668" dx2="8866.666666666668" dy="0.0">
+					<Attribute Name="Visible" Type="STRING" Value="false"/>
+				</Connection>
+				<Connection Source="Is_running.EO" Destination="BOOL2BOOL_10.REQ" Comment="" dx1="8933.333333333334" dx2="8933.333333333334" dy="0.0">
+					<Attribute Name="Visible" Type="STRING" Value="false"/>
+				</Connection>
+				<Connection Source="Is_running.EO" Destination="BOOL2BOOL_11.REQ" Comment="" dx1="8933.333333333334" dx2="8933.333333333334" dy="0.0">
+					<Attribute Name="Visible" Type="STRING" Value="false"/>
+				</Connection>
+				<Connection Source="BOOL2BOOL_3.CNF" Destination="E_F_TRIG.EI" Comment="" dx1="313.33333333333337" dx2="313.33333333333337" dy="0.0"/>
+				<Connection Source="E_F_TRIG.EO" Destination="Is_running.R" Comment="" dx1="453.33333333333337" dx2="453.33333333333337" dy="0.0"/>
+				<Connection Source="Is_running.EO" Destination="Is_running_NOT.REQ" Comment=""/>
+				<Connection Source="Is_running_NOT.CNF" Destination="BOOL2BOOL_9.REQ" Comment="" dx1="8200.0" dx2="8200.0" dy="0.0">
+					<Attribute Name="Visible" Type="STRING" Value="false"/>
+				</Connection>
+				<Connection Source="Is_running_NOT.CNF" Destination="BOOL2BOOL_18.REQ" Comment="" dx1="4466.666666666667" dx2="4466.666666666667" dy="0.0">
+					<Attribute Name="Visible" Type="STRING" Value="false"/>
+				</Connection>
+				<Connection Source="Vison_Sensor.IND" Destination="UINT2UINT.REQ" Comment="" dx1="413.33333333333337" dx2="413.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_1.CNF" Destination="E_R_TRIG_1.EI" Comment="" dx1="426.6666666666667" dx2="426.6666666666667" dy="0.0"/>
+				<Connection Source="OPC_PUB_EX_1.INITO" Destination="OPC_PUB_EX_2.INIT" Comment="" dx1="80.0" dx2="80.0" dy="953.3333333333334"/>
+				<Connection Source="OPC_SUB_EX_4.INITO" Destination="OPC_PUB_EX_1.INIT" Comment="" dx1="3133.3333333333335" dx2="3133.3333333333335" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_5.INITO" Destination="OPC_PUB_EX_3.INIT" Comment="" dx1="3133.3333333333335" dx2="3133.3333333333335" dy="0.0"/>
+				<Connection Source="OPC_PUB_EX_3.INITO" Destination="OPC_PUB_EX_4.INIT" Comment="" dx1="80.0" dx2="80.0" dy="953.3333333333334"/>
+				<Connection Source="OPC_SUB_EX_6.INITO" Destination="OPC_PUB_EX_5.INIT" Comment="" dx1="3133.3333333333335" dx2="3133.3333333333335" dy="0.0"/>
+				<Connection Source="OPC_PUB_EX_5.INITO" Destination="OPC_PUB_EX_6.INIT" Comment="" dx1="80.0" dx2="80.0" dy="953.3333333333334"/>
+				<Connection Source="Is_running.EO" Destination="F_SEL.REQ" Comment="" dx1="80.0" dx2="80.0" dy="-1466.6666666666667"/>
+				<Connection Source="UINT2UINT.CNF" Destination="F_SEL.REQ" Comment=""/>
+				<Connection Source="F_SEL.CNF" Destination="UINT2UINT_1.REQ" Comment="" dx1="253.33333333333334" dx2="253.33333333333334" dy="0.0"/>
+				<Connection Source="UINT2UINT_1.CNF" Destination="OPC_PUB_1_FixID.REQ" Comment="" dx1="486.6666666666667" dx2="486.6666666666667" dy="0.0"/>
+				<Connection Source="UINT2UINT_1.CNF" Destination="OPC_PUB_1_FixID_1.REQ" Comment="" dx1="613.3333333333334"/>
+				<Connection Source="UINT2UINT_1.CNF" Destination="OPC_PUB_1_FixID_2.REQ" Comment="" dx1="613.3333333333334"/>
+				<Connection Source="OPC_SUB_EX_4.IND" Destination="UINT2UINT_2.REQ" Comment="" dx1="400.0" dx2="400.0" dy="0.0"/>
+				<Connection Source="UINT2UINT_2.CNF" Destination="SorterLogic.IND" Comment="" dx1="480.0" dx2="480.0" dy="0.0"/>
+				<Connection Source="SorterLogic.CNF" Destination="BOOL2BOOL_12.REQ" Comment="" dx1="360.0" dx2="360.0" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_12.CNF" Destination="OPC_PUB_EX_1.REQ" Comment="" dx1="1280.0" dx2="1280.0" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_12.CNF" Destination="OPC_PUB_EX_2.REQ" Comment="" dx1="1280.0" dx2="1280.0" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_5.IND" Destination="UINT2UINT_3.REQ" Comment="" dx1="266.6666666666667" dx2="266.6666666666667" dy="0.0"/>
+				<Connection Source="UINT2UINT_3.CNF" Destination="SorterLogic_3.IND" Comment="" dx1="480.0" dx2="480.0" dy="0.0"/>
+				<Connection Source="SorterLogic_3.CNF" Destination="BOOL2BOOL_13.REQ" Comment="" dx1="360.0" dx2="360.0" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_13.CNF" Destination="OPC_PUB_EX_3.REQ" Comment="" dx1="1280.0" dx2="1280.0" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_13.CNF" Destination="OPC_PUB_EX_4.REQ" Comment="" dx1="1280.0" dx2="1280.0" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_6.IND" Destination="UINT2UINT_4.REQ" Comment="" dx1="266.6666666666667" dx2="266.6666666666667" dy="0.0"/>
+				<Connection Source="UINT2UINT_4.CNF" Destination="SorterLogic_1.IND" Comment="" dx1="480.0" dx2="480.0" dy="0.0"/>
+				<Connection Source="SorterLogic_1.CNF" Destination="BOOL2BOOL_14.REQ" Comment="" dx1="360.0" dx2="360.0" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_14.CNF" Destination="OPC_PUB_EX_5.REQ" Comment="" dx1="813.3333333333334" dx2="813.3333333333334" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_14.CNF" Destination="OPC_PUB_EX_6.REQ" Comment="" dx1="813.3333333333334" dx2="813.3333333333334" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_4.INITO" Destination="OPC_SUB_EX_7.INIT" Comment="" dx1="80.0" dx2="80.0" dy="880.0"/>
+				<Connection Source="UPC_PUB_FIO.INITO" Destination="OPC_SUB_1_FixID.INIT" Comment="" dx1="80.0" dx2="80.0" dy="1306.6666666666667"/>
+				<Connection Source="OPC_PUB_EX_2.INITO" Destination="OPC_PUB_EX_7.INIT" Comment="" dx1="80.0" dx2="80.0" dy="933.3333333333334"/>
+				<Connection Source="OPC_SUB_EX_7.IND" Destination="BOOL2BOOL_15.REQ" Comment="" dx1="333.33333333333337" dx2="333.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_15.CNF" Destination="SorterLogic.C" Comment="" dx1="546.6666666666667" dx2="546.6666666666667" dy="0.0"/>
+				<Connection Source="SorterLogic.CNT" Destination="UINT2UINT_5.REQ" Comment="" dx1="360.0" dx2="360.0" dy="0.0"/>
+				<Connection Source="UINT2UINT_5.CNF" Destination="OPC_PUB_EX_7.REQ" Comment="" dx1="680.0" dx2="680.0" dy="0.0"/>
+				<Connection Source="OPC_SUB_1_FixID.IND" Destination="UINT2UINT_6.REQ" Comment="" dx1="386.6666666666667" dx2="386.6666666666667" dy="0.0"/>
+				<Connection Source="UINT2UINT_6.CNF" Destination="Sorter_1.CNT" Comment="" dx1="866.6666666666667" dx2="866.6666666666667" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_5.INITO" Destination="OPC_SUB_EX_8.INIT" Comment="" dx1="80.0" dx2="80.0" dy="733.3333333333334"/>
+				<Connection Source="OPC_SUB_EX_8.IND" Destination="BOOL2BOOL_16.REQ" Comment="" dx1="333.33333333333337" dx2="333.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_16.CNF" Destination="SorterLogic_3.C" Comment="" dx1="586.6666666666667" dx2="586.6666666666667" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_6.INITO" Destination="OPC_SUB_EX_9.INIT" Comment="" dx1="80.0" dx2="80.0" dy="800.0"/>
+				<Connection Source="OPC_SUB_EX_9.IND" Destination="BOOL2BOOL_17.REQ" Comment="" dx1="333.33333333333337" dx2="333.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_17.CNF" Destination="SorterLogic_1.C" Comment="" dx1="413.33333333333337" dx2="413.33333333333337" dy="0.0"/>
+				<Connection Source="SorterLogic_3.CNT" Destination="UINT2UINT_7.REQ" Comment="" dx1="360.0" dx2="360.0" dy="0.0"/>
+				<Connection Source="OPC_PUB_EX_4.INITO" Destination="OPC_PUB_EX_8.INIT" Comment="" dx1="80.0" dx2="80.0" dy="1026.6666666666667"/>
+				<Connection Source="UINT2UINT_7.CNF" Destination="OPC_PUB_EX_8.REQ" Comment="" dx1="680.0" dx2="680.0" dy="0.0"/>
+				<Connection Source="SorterLogic_1.CNT" Destination="UINT2UINT_8.REQ" Comment="" dx1="280.0" dx2="280.0" dy="0.0"/>
+				<Connection Source="OPC_PUB_EX_6.CNF" Destination="OPC_PUB_EX_9.INIT" Comment="" dx1="80.0" dx2="80.0" dy="893.3333333333334"/>
+				<Connection Source="UINT2UINT_8.CNF" Destination="OPC_PUB_EX_9.REQ" Comment="" dx1="680.0" dx2="680.0" dy="0.0"/>
+				<Connection Source="OPC_SUB_1_FixID.INITO" Destination="OPC_SUB_1_FixID_1.INIT" Comment="" dx1="80.0" dx2="80.0" dy="733.3333333333334"/>
+				<Connection Source="OPC_SUB_1_FixID_1.IND" Destination="UINT2UINT_9.REQ" Comment="" dx1="280.0" dx2="280.0" dy="0.0"/>
+				<Connection Source="UINT2UINT_9.CNF" Destination="Sorter_2.CNT" Comment="" dx1="1040.0" dx2="1040.0" dy="0.0"/>
+				<Connection Source="OPC_SUB_1_FixID_1.INITO" Destination="OPC_SUB_1_FixID_2.INIT" Comment="" dx1="80.0" dx2="80.0" dy="733.3333333333334"/>
+				<Connection Source="OPC_SUB_1_FixID_2.IND" Destination="UINT2UINT_10.REQ" Comment="" dx1="700.0" dx2="700.0" dy="0.0"/>
+				<Connection Source="UINT2UINT_10.CNF" Destination="Sorter_3.CNT" Comment="" dx1="933.3333333333334" dx2="933.3333333333334" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_1.IND" Destination="BOOL2BOOL_19.REQ" Comment="" dx1="333.33333333333337" dx2="333.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_19.CNF" Destination="E_R_TRIG_3.EI" Comment="" dx1="226.66666666666669" dx2="226.66666666666669" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_20.CNF" Destination="E_R_TRIG_4.EI" Comment="" dx1="226.66666666666669"/>
+				<Connection Source="OPC_SUB_EX_2.IND" Destination="BOOL2BOOL_20.REQ" Comment="" dx1="333.33333333333337"/>
+				<Connection Source="E_R_TRIG_4.EO" Destination="SorterLogic_3.ResetC" Comment="" dx1="80.0" dx2="80.0" dy="-1200.0"/>
+				<Connection Source="OPC_SUB_EX_8.INITO" Destination="OPC_SUB_EX_2.INIT" Comment="" dx1="80.0" dx2="80.0" dy="866.6666666666667"/>
+				<Connection Source="BOOL2BOOL_21.CNF" Destination="E_R_TRIG_5.EI" Comment="" dx1="226.66666666666669"/>
+				<Connection Source="OPC_SUB_EX_3.IND" Destination="BOOL2BOOL_21.REQ" Comment="" dx1="333.33333333333337"/>
+				<Connection Source="OPC_SUB_EX_9.INITO" Destination="OPC_SUB_EX_3.INIT" Comment="" dx1="80.0" dx2="80.0" dy="800.0"/>
+				<Connection Source="E_R_TRIG_5.EO" Destination="SorterLogic_1.ResetC" Comment="" dx1="80.0" dx2="80.0" dy="-1466.6666666666667"/>
+				<Connection Source="E_R_TRIG_3.EO" Destination="SorterLogic.ResetC" Comment="" dx1="80.0" dx2="80.0" dy="-1200.0"/>
+				<Connection Source="OPC_SUB_EX_7.INITO" Destination="OPC_SUB_EX_1.INIT" Comment="" dx1="80.0" dx2="80.0" dy="946.6666666666667"/>
+			</EventConnections>
+			<DataConnections>
+				<Connection Source="BOOL2BOOL.OUT" Destination="E_R_TRIG.QI" Comment=""/>
+				<Connection Source="At_Exit.value" Destination="BOOL2BOOL.IN" Comment="" dx1="426.6666666666667" dx2="426.6666666666667" dy="0.0"/>
+				<Connection Source="Reset.value" Destination="BOOL2BOOL_1.IN" Comment="" dx1="460.0" dx2="460.0" dy="0.0"/>
+				<Connection Source="Stop.value" Destination="BOOL2BOOL_3.IN" Comment="" dx1="460.0" dx2="460.0" dy="0.0"/>
+				<Connection Source="Emergency_Stop.value" Destination="BOOL2BOOL_4.IN" Comment="" dx1="453.33333333333337" dx2="453.33333333333337" dy="0.0"/>
+				<Connection Source="Auto.value" Destination="BOOL2BOOL_5.IN" Comment="" dx1="386.6666666666667" dx2="386.6666666666667" dy="0.0"/>
+				<Connection Source="Manual.value" Destination="BOOL2BOOL_6.IN" Comment="" dx1="453.33333333333337" dx2="453.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_7.OUT" Destination="Start_Light.value" Comment="" dx1="626.6666666666667" dx2="626.6666666666667" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_8.OUT" Destination="Reset_Light.value" Comment="" dx1="626.6666666666667" dx2="626.6666666666667" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_9.OUT" Destination="Stop_Light.value" Comment="" dx1="626.6666666666667" dx2="626.6666666666667" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_10.OUT" Destination="ENTRY_CONVEYOR.value" Comment="" dx1="666.6666666666667" dx2="666.6666666666667" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_11.OUT" Destination="EXIT_CONVEYOR.value" Comment="" dx1="666.6666666666667" dx2="666.6666666666667" dy="0.0"/>
+				<Connection Source="Start.value" Destination="BOOL2BOOL_2.IN" Comment="" dx1="386.6666666666667" dx2="386.6666666666667" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_18.OUT" Destination="STOP_BLADE.value" Comment="" dx1="1153.3333333333335" dx2="1153.3333333333335" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_2.OUT" Destination="E_R_TRIG_2.QI" Comment="" dx1="426.6666666666667" dx2="426.6666666666667" dy="0.0"/>
+				<Connection Source="Is_running.Q" Destination="BOOL2BOOL_7.IN" Comment="" dx1="8866.666666666668" dx2="8866.666666666668" dy="0.0">
+					<Attribute Name="Visible" Type="STRING" Value="false"/>
+				</Connection>
+				<Connection Source="Is_running.Q" Destination="BOOL2BOOL_10.IN" Comment="" dx1="8933.333333333334" dx2="8933.333333333334" dy="0.0">
+					<Attribute Name="Visible" Type="STRING" Value="false"/>
+				</Connection>
+				<Connection Source="Is_running.Q" Destination="BOOL2BOOL_11.IN" Comment="" dx1="8933.333333333334" dx2="8933.333333333334" dy="0.0">
+					<Attribute Name="Visible" Type="STRING" Value="false"/>
+				</Connection>
+				<Connection Source="BOOL2BOOL_3.OUT" Destination="E_F_TRIG.QI" Comment="" dx1="313.33333333333337" dx2="313.33333333333337" dy="0.0"/>
+				<Connection Source="Is_running.Q" Destination="Is_running_NOT.IN" Comment="" dx1="453.33333333333337" dx2="453.33333333333337" dy="0.0"/>
+				<Connection Source="Is_running_NOT.OUT" Destination="BOOL2BOOL_9.IN" Comment="" dx1="8200.0" dx2="8200.0" dy="0.0">
+					<Attribute Name="Visible" Type="STRING" Value="false"/>
+				</Connection>
+				<Connection Source="Is_running_NOT.OUT" Destination="BOOL2BOOL_18.IN" Comment="" dx1="4466.666666666667" dx2="4466.666666666667" dy="0.0">
+					<Attribute Name="Visible" Type="STRING" Value="false"/>
+				</Connection>
+				<Connection Source="Vison_Sensor.value" Destination="UINT2UINT.IN" Comment="" dx1="413.33333333333337" dx2="413.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_1.OUT" Destination="E_R_TRIG_1.QI" Comment="" dx1="426.6666666666667" dx2="426.6666666666667" dy="0.0"/>
+				<Connection Source="Is_running.Q" Destination="F_SEL.G" Comment="" dx1="80.0" dx2="80.0" dy="-1520.0"/>
+				<Connection Source="UINT2UINT.OUT" Destination="F_SEL.IN1" Comment="" dx1="2346.666666666667" dx2="2346.666666666667" dy="0.0"/>
+				<Connection Source="F_SEL.OUT" Destination="UINT2UINT_1.IN" Comment="" dx1="253.33333333333334" dx2="253.33333333333334" dy="0.0"/>
+				<Connection Source="UINT2UINT_1.OUT" Destination="OPC_PUB_1_FixID.value" Comment="" dx1="486.6666666666667" dx2="486.6666666666667" dy="0.0"/>
+				<Connection Source="UINT2UINT_1.OUT" Destination="OPC_PUB_1_FixID_1.value" Comment="" dx1="613.3333333333334"/>
+				<Connection Source="UINT2UINT_1.OUT" Destination="OPC_PUB_1_FixID_2.value" Comment="" dx1="613.3333333333334"/>
+				<Connection Source="OPC_SUB_EX_4.value" Destination="UINT2UINT_2.IN" Comment="" dx1="400.0" dx2="400.0" dy="0.0"/>
+				<Connection Source="UINT2UINT_2.OUT" Destination="SorterLogic.value" Comment="" dx1="480.0" dx2="480.0" dy="0.0"/>
+				<Connection Source="SorterLogic.OUT" Destination="BOOL2BOOL_12.IN" Comment="" dx1="360.0" dx2="360.0" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_12.OUT" Destination="OPC_PUB_EX_1.value" Comment="" dx1="1280.0" dx2="1280.0" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_12.OUT" Destination="OPC_PUB_EX_2.value" Comment="" dx1="1280.0" dx2="1280.0" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_5.value" Destination="UINT2UINT_3.IN" Comment="" dx1="266.6666666666667" dx2="266.6666666666667" dy="0.0"/>
+				<Connection Source="UINT2UINT_3.OUT" Destination="SorterLogic_3.value" Comment="" dx1="480.0" dx2="480.0" dy="0.0"/>
+				<Connection Source="SorterLogic_3.OUT" Destination="BOOL2BOOL_13.IN" Comment="" dx1="360.0" dx2="360.0" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_13.OUT" Destination="OPC_PUB_EX_3.value" Comment="" dx1="1280.0" dx2="1280.0" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_13.OUT" Destination="OPC_PUB_EX_4.value" Comment="" dx1="1280.0" dx2="1280.0" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_6.value" Destination="UINT2UINT_4.IN" Comment="" dx1="266.6666666666667" dx2="266.6666666666667" dy="0.0"/>
+				<Connection Source="UINT2UINT_4.OUT" Destination="SorterLogic_1.value" Comment="" dx1="480.0" dx2="480.0" dy="0.0"/>
+				<Connection Source="SorterLogic_1.OUT" Destination="BOOL2BOOL_14.IN" Comment="" dx1="360.0" dx2="360.0" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_14.OUT" Destination="OPC_PUB_EX_5.value" Comment="" dx1="813.3333333333334" dx2="813.3333333333334" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_14.OUT" Destination="OPC_PUB_EX_6.value" Comment="" dx1="813.3333333333334" dx2="813.3333333333334" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_7.value" Destination="BOOL2BOOL_15.IN" Comment="" dx1="333.33333333333337" dx2="333.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_15.OUT" Destination="SorterLogic.AtExit" Comment="" dx1="546.6666666666667" dx2="546.6666666666667" dy="0.0"/>
+				<Connection Source="SorterLogic.CV" Destination="UINT2UINT_5.IN" Comment="" dx1="360.0" dx2="360.0" dy="0.0"/>
+				<Connection Source="UINT2UINT_5.OUT" Destination="OPC_PUB_EX_7.value" Comment="" dx1="680.0" dx2="680.0" dy="0.0"/>
+				<Connection Source="OPC_SUB_1_FixID.value" Destination="UINT2UINT_6.IN" Comment="" dx1="386.6666666666667" dx2="386.6666666666667" dy="0.0"/>
+				<Connection Source="UINT2UINT_6.OUT" Destination="Sorter_1.Counter" Comment="" dx1="866.6666666666667" dx2="866.6666666666667" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_8.value" Destination="BOOL2BOOL_16.IN" Comment="" dx1="333.33333333333337" dx2="333.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_16.OUT" Destination="SorterLogic_3.AtExit" Comment="" dx1="586.6666666666667" dx2="586.6666666666667" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_9.value" Destination="BOOL2BOOL_17.IN" Comment="" dx1="333.33333333333337" dx2="333.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_17.OUT" Destination="SorterLogic_1.AtExit" Comment="" dx1="413.33333333333337" dx2="413.33333333333337" dy="0.0"/>
+				<Connection Source="SorterLogic_3.CV" Destination="UINT2UINT_7.IN" Comment="" dx1="360.0" dx2="360.0" dy="0.0"/>
+				<Connection Source="UINT2UINT_7.OUT" Destination="OPC_PUB_EX_8.value" Comment="" dx1="680.0" dx2="680.0" dy="0.0"/>
+				<Connection Source="SorterLogic_1.CV" Destination="UINT2UINT_8.IN" Comment="" dx1="493.33333333333337" dx2="493.33333333333337" dy="0.0"/>
+				<Connection Source="UINT2UINT_8.OUT" Destination="OPC_PUB_EX_9.value" Comment="" dx1="680.0" dx2="680.0" dy="0.0"/>
+				<Connection Source="OPC_SUB_1_FixID_1.value" Destination="UINT2UINT_9.IN" Comment="" dx1="280.0" dx2="280.0" dy="0.0"/>
+				<Connection Source="UINT2UINT_9.OUT" Destination="Sorter_2.Counter" Comment="" dx1="1040.0" dx2="1040.0" dy="0.0"/>
+				<Connection Source="OPC_SUB_1_FixID_2.value" Destination="UINT2UINT_10.IN" Comment="" dx1="700.0" dx2="700.0" dy="0.0"/>
+				<Connection Source="UINT2UINT_10.OUT" Destination="Sorter_3.Counter" Comment="" dx1="933.3333333333334" dx2="933.3333333333334" dy="0.0"/>
+				<Connection Source="OPC_SUB_EX_1.value" Destination="BOOL2BOOL_19.IN" Comment="" dx1="333.33333333333337" dx2="333.33333333333337" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_19.OUT" Destination="E_R_TRIG_3.QI" Comment="" dx1="226.66666666666669" dx2="226.66666666666669" dy="0.0"/>
+				<Connection Source="BOOL2BOOL_20.OUT" Destination="E_R_TRIG_4.QI" Comment="" dx1="226.66666666666669"/>
+				<Connection Source="OPC_SUB_EX_2.value" Destination="BOOL2BOOL_20.IN" Comment="" dx1="333.33333333333337"/>
+				<Connection Source="BOOL2BOOL_21.OUT" Destination="E_R_TRIG_5.QI" Comment="" dx1="226.66666666666669"/>
+				<Connection Source="OPC_SUB_EX_3.value" Destination="BOOL2BOOL_21.IN" Comment="" dx1="333.33333333333337"/>
+			</DataConnections>
+		</SubAppNetwork>
+	</Application>
+	<Device Name="PLC" Type="FORTE_PC" Comment="" x="1333.3333333333335" y="4000.0">
+		<Parameter Name="MGR_ID" Value="&quot;localhost:61600&quot;"/>
+		<Attribute Name="Profile" Type="STRING" Value="DynamicTypeLoad"/>
+		<Attribute Name="Color" Type="STRING" Value="255,190,111"/>
+		<Attribute Name="FBType" Type="STRING" Value="GEN_E_MUX, F_LT, F_LWORD_TO_WORD, F_TAN, F_DINT_TO_UINT, F_BYTE_TO_DINT, F_ADD_DT_TIME, F_TIME_IN_US_TO_LREAL, F_INT_TO_UDINT, F_ADD_TOD_TIME, F_SUB_DT_DT, F_DT_TO_TOD, F_WSTRING_TO_REAL, F_UINT_TO_BCD_WORD, F_UDINT_TO_REAL, F_REAL_TO_UDINT, F_DWORD_TO_WORD, F_MUL, FB_CTUD_LINT, TEST_CONDITION, F_LE, GEN_SUBSCRIBE, F_LN, FB_CTD_DINT, GEN_OR, E_CYCLE, FB_F_TRIG, F_LREAL_TO_SINT, E_F_TRIG, F_LWORD_TO_UINT, E_RS, F_UINT_TO_WORD, F_WORD_TO_DINT, F_OR, F_WORD_TO_BYTE, F_TIME_IN_NS_TO_ULINT, FB_CTD_ULINT, FB_TOF, STEST_END, F_NE, FB_TON, F_STRING_TO_UINT, F_LWORD_TO_ULINT, F_INT_TO_STRING, F_INT_TO_BYTE, F_INT_TO_DINT, F_ULINT_TO_LINT, F_DWORD_TO_UINT, F_WSTRING_TO_ULINT, F_WSTRING_TO_LWORD, F_STRING_TO_DWORD, DWORD2DWORD, F_TIME_IN_NS_TO_LINT, F_DINT_TO_WSTRING, E_SELECT, F_LINT_TO_STRING, FB_CTUD, F_MULTIME, F_USINT_TO_INT, LocalizedText2LocalizedText, F_DWORD_TO_UDINT, F_UINT_TO_LWORD, F_SINT_TO_LWORD, GEN_F_MUX, USINT2USINT, F_LINT_TO_SINT, F_WORD_TO_USINT, F_DWORD_TO_INT, F_LREAL_TO_REAL, F_BOOL_TO_LINT, F_LEFT, FB_CTD, E_SR, F_UDINT_TO_BCD_DWORD, GEN_XOR, F_DINT_TO_WORD, F_SUB_TOD_TIME, E_RESTART, E_PERMIT, TIME2TIME, F_UINT_TO_SINT, F_XOR, F_STRING_TO_WORD, F_SEL, F_ULINT_TO_LREAL, F_SINT_TO_LREAL, F_DINT_TO_SINT, E_TimeOut, F_BYTE_TO_UDINT, F_REPLACE, F_LINT_TO_USINT, F_ABS, F_WORD_TO_LWORD, E_DELAY, GEN_ADD, F_INT_TO_WSTRING, F_STRING_TO_ULINT, F_USINT_TO_STRING, F_DINT_TO_USINT, F_STRING_TO_BOOL, F_DWORD_TO_WSTRING, F_INT_TO_REAL, F_DWORD_TO_STRING, E_CTU, F_TIME_TO_STRING, F_WSTRING_TO_BYTE, F_USINT_TO_WSTRING, F_WSTRING_TO_DINT, F_WSTRING_TO_DWORD, F_MOVE, F_WSTRING_TO_STRING, F_USINT_TO_LINT, F_DIV, F_WSTRING_TO_SINT, E_CTD, F_UINT_TO_DWORD, F_LWORD_TO_LINT, F_STRING_TO_TIME, FB_CTUD_DINT, F_ADD, F_BYTE_TO_LINT, F_TIME_IN_MS_TO_LREAL, F_LREAL_TO_UINT, F_ACOS, F_DWORD_TO_LINT, F_SHL, F_REAL_TO_ULINT, F_ULINT_TO_UINT, F_UDINT_TO_SINT, F_SHR, F_BOOL_TO_INT, UINT2UINT, F_WORD_TO_DWORD, F_INT_TO_LWORD, F_USINT_TO_UINT, F_LREAL_TO_WSTRING, F_INT_TO_ULINT, GEN_CSV_WRITER, F_LINT_TO_WORD, F_UINT_TO_LREAL, F_STRING_TO_SINT, F_SINT_TO_WORD, F_STRING_TO_WSTRING, STRING2STRING, F_LREAL_TO_DINT, F_SIN, F_UINT_TO_USINT, FB_CTU_LINT, F_DINT_TO_ULINT, F_REAL_TO_UINT, RMT_RES, F_ULINT_TO_WORD, F_INT_TO_LINT, E_D_FF, F_STRING_TO_USINT, FB_CTD_LINT, FB_R_TRIG, F_INT_TO_DWORD, F_WORD_TO_LINT, F_UDINT_TO_INT, REAL2REAL, F_LREAL_TO_STRING, F_WSTRING_TO_INT, F_LREAL_TO_USINT, F_DINT_TO_LWORD, DEV_MGR, F_SINT_TO_UINT, E_CTUD, E_RDELAY, F_SINT_TO_ULINT, F_LINT_TO_ULINT, F_RIGHT, F_SINT_TO_INT, F_LWORD_TO_WSTRING, SINT2SINT, FB_CTD_UDINT, F_LINT_TO_LWORD, F_LWORD_TO_UDINT, F_LWORD_TO_STRING, F_TRUNC, F_ULINT_TO_DWORD, F_TIME_IN_S_TO_LREAL, F_BOOL_TO_DWORD, E_TRAIN, OUT_ANY_CONSOLE, F_ULINT_TO_SINT, F_DINT_TO_LINT, F_BOOL_TO_USINT, F_UDINT_TO_DWORD, GEN_E_DEMUX, F_SQRT, F_BOOL_TO_DINT, F_BOOL_TO_BYTE, F_UINT_TO_INT, F_TIME_IN_S_TO_LINT, F_ULINT_TO_USINT, F_UINT_TO_REAL, F_LREAL_TO_LWORD, F_SINT_TO_LINT, F_MAX, F_LREAL_TO_INT, F_UDINT_TO_LWORD, INT2INT, F_BYTE_TO_ULINT, F_UDINT_TO_WORD, F_LINT_TO_UINT, F_TIME_IN_US_TO_ULINT, F_COS, F_TIME_IN_NS_TO_LREAL, F_REAL_TO_LINT, F_STRING_TO_LWORD, F_BYTE_TO_STRING, F_USINT_TO_WORD, E_REND, F_ASIN, F_REAL_TO_INT, F_BOOL_TO_LWORD, F_WORD_BCD_TO_UINT, F_BOOL_TO_SINT, F_BYTE_TO_INT, F_BOOL_TO_ULINT, EMB_RES, F_BYTE_TO_WORD, F_STRING_TO_INT, F_USINT_TO_LWORD, F_DWORD_TO_DINT, F_ULINT_TO_LWORD, GEN_APPEND_STRING, F_USINT_TO_ULINT, GEN_SUBL, F_DWORD_TO_BYTE, F_DIVTIME, F_ROL, F_LWORD_TO_DINT, F_WORD_TO_SINT, F_STRING_TO_REAL, F_LWORD_TO_BYTE, FB_CTU_DINT, GEN_AND, F_AND, F_ROR, GEN_CLIENT, F_ULINT_TO_WSTRING, F_SINT_TO_STRING, F_LREAL_TO_LINT, WSTRING2WSTRING, F_WORD_TO_INT, F_UINT_TO_BYTE, F_UDINT_TO_UINT, F_SINT_TO_UDINT, F_UINT_TO_DINT, F_UINT_TO_UDINT, F_UINT_TO_WSTRING, F_WSTRING_TO_UINT, F_DINT_TO_UDINT, E_SPLIT, F_DWORD_TO_LWORD, F_USINT_TO_SINT, F_ULINT_TO_BCD_LWORD, F_BYTE_BCD_TO_USINT, F_DWORD_TO_ULINT, F_BYTE_TO_SINT, F_BYTE_TO_WSTRING, GEN_ARRAY2ARRAY, F_DT_TO_DATE, GEN_STRUCT_DEMUX, F_LEN, GEN_STRUCT_MUX, F_INT_TO_WORD, FB_RANDOM, F_LINT_TO_UDINT, F_EXP, F_USINT_TO_DWORD, F_TIME_IN_MS_TO_ULINT, F_REAL_TO_SINT, F_INT_TO_USINT, F_UDINT_TO_WSTRING, F_EXPT, F_SUB, F_ULINT_TO_REAL, F_REAL_TO_LREAL, F_MID, F_BYTE_TO_UINT, F_BYTE_TO_DWORD, F_INT_TO_UINT, F_DWORD_TO_REAL, F_DINT_TO_BYTE, F_WORD_TO_STRING, F_REAL_TO_STRING, F_SUB_TOD_TOD, SET_AT_INDEX, F_MIN, F_LREAL_TO_ULINT, F_STRING_TO_BYTE, F_BYTE_TO_LWORD, F_STRING_TO_DINT, F_WORD_TO_WSTRING, BOOL2BOOL, F_LINT_TO_INT, F_WSTRING_TO_TIME, FB_CTU_UDINT, F_WSTRING_TO_BOOL, F_INSERT, F_SUB_DT_TIME, F_FIND, F_UDINT_TO_ULINT, F_WORD_TO_UDINT, F_DINT_TO_DWORD, F_WSTRING_TO_USINT, GEN_VALUES2ARRAY, GEN_ARRAY2VALUES, F_WSTRING_TO_WORD, F_DINT_TO_STRING, F_WORD_TO_UINT, F_TIME_IN_US_TO_LINT, F_LINT_TO_DWORD, F_CONCAT, FB_CTUD_ULINT, F_UDINT_TO_LINT, F_SUB_DATE_DATE, F_LWORD_TO_LREAL, F_LWORD_TO_INT, WORD2WORD, E_STOPWATCH, F_LIMIT, F_TIME_IN_S_TO_ULINT, F_LWORD_TO_USINT, F_REAL_TO_DINT, F_DWORD_TO_USINT, E_MERGE, F_SINT_TO_DWORD, E_DEMUX, F_BOOL_TO_UDINT, BYTE2BYTE, FB_TP, F_USINT_TO_BCD_BYTE, F_SINT_TO_DINT, F_UINT_TO_LINT, F_SINT_TO_BYTE, F_ATAN, F_LINT_TO_BYTE, F_BYTE_TO_USINT, F_ULINT_TO_UDINT, FB_SR, F_NOT, F_DINT_TO_INT, F_LINT_TO_DINT, F_DELETE, FB_CTU, GEN_SERVER, GEN_PUBL, F_UDINT_TO_LREAL, F_BOOL_TO_UINT, F_UINT_TO_STRING, E_R_TRIG, F_GE, F_LWORD_BCD_TO_ULINT, F_UDINT_TO_STRING, F_REAL_TO_WSTRING, FB_RS, F_MUX_2, F_LINT_TO_WSTRING, F_USINT_TO_UDINT, F_UINT_TO_ULINT, F_EQ, E_T_FF, F_USINT_TO_REAL, LREAL2LREAL, F_STRING_TO_LREAL, F_ULINT_TO_STRING, F_MOD, E_RTimeOut, F_ULINT_TO_DINT, F_ULINT_TO_BYTE, F_WSTRING_TO_UDINT, F_TIME_TO_WSTRING, GET_STRUCT_VALUE, GEN_PUBLISH, F_REAL_TO_DWORD, F_DWORD_BCD_TO_UDINT, F_INT_TO_LREAL, F_SINT_TO_WSTRING, F_LWORD_TO_SINT, F_GT, F_LINT_TO_REAL, F_TIME_IN_MS_TO_LINT, F_SINT_TO_REAL, F_LOG, F_ULINT_TO_INT, F_DWORD_TO_SINT, F_BOOL_TO_WORD, F_REAL_TO_USINT, E_SWITCH, F_LINT_TO_LREAL, F_STRING_TO_LINT, F_SINT_TO_USINT, F_DINT_TO_REAL, DINT2DINT, F_WORD_TO_ULINT, F_INT_TO_SINT, F_CONCAT_DATE_TOD, F_WSTRING_TO_LREAL, GET_AT_INDEX, F_USINT_TO_LREAL, F_BOOL_TO_WSTRING, FB_CTU_ULINT, F_DINT_TO_LREAL, UDINT2UDINT, F_USINT_TO_BYTE, F_BOOL_TO_STRING, F_LWORD_TO_DWORD, F_LREAL_TO_UDINT, F_STRING_TO_UDINT, F_UDINT_TO_DINT, F_UDINT_TO_BYTE, F_WSTRING_TO_LINT, F_USINT_TO_DINT" Comment="created during deployment"/>
+		<Resource Name="CPU1" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+			<FBNetwork>
+				<SubApp Name="FIO" Type="OPC_SUB_FIO" Comment="" x="646.6666666666667" y="0.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="E_R_TRIG" Type="E_R_TRIG" Comment="" x="0.0" y="6000.0">
+				</FB>
+				<FB Name="BOOL2BOOL" Type="BOOL2BOOL" Comment="" x="2720.0" y="1046.6666666666667">
+				</FB>
+				<FB Name="BOOL2BOOL_1" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="2020.0">
+				</FB>
+				<SubApp Name="UPC_PUB_FIO" Type="OPC_PUB_FIO" Comment="" x="666.6666666666667" y="153.33333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="Start_Light" Type="OPC_PUB_1_FixID" Comment="" x="653.3333333333334" y="20.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;start_light&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="Reset_Light" Type="OPC_PUB_1_FixID" Comment="" x="653.3333333333334" y="953.3333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;reset_light&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="Stop_Light" Type="OPC_PUB_1_FixID" Comment="" x="653.3333333333334" y="1886.6666666666667">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;stop_light&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="ENTRY_CONVEYOR" Type="OPC_PUB_1_FixID" Comment="" x="853.3333333333334" y="20.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;entry_conveyor&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="EXIT_CONVEYOR" Type="OPC_PUB_1_FixID" Comment="" x="853.3333333333334" y="953.3333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;exit_conveyor&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="At_Exit" Type="OPC_SUB_1_FixID" Comment="" x="766.6666666666667" y="933.3333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;at_exit&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="Vison_Sensor" Type="OPC_SUB_1_FixID" Comment="" x="800.0" y="20.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;vision_sensor&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="Stop" Type="OPC_SUB_1_FixID" Comment="" x="853.3333333333334" y="993.3333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;Stop&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="Reset" Type="OPC_SUB_1_FixID" Comment="" x="853.3333333333334" y="1926.6666666666667">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;reset&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="Emergency_Stop" Type="OPC_SUB_1_FixID" Comment="" x="853.3333333333334" y="2993.3333333333335">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;emergency_stop&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="Auto" Type="OPC_SUB_1_FixID" Comment="" x="853.3333333333334" y="4060.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;auto&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="Manual" Type="OPC_SUB_1_FixID" Comment="" x="853.3333333333334" y="4860.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;Manual&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="BOOL2BOOL_2" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="20.0">
+				</FB>
+				<FB Name="BOOL2BOOL_3" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="1086.6666666666667">
+				</FB>
+				<FB Name="BOOL2BOOL_4" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="3086.666666666667">
+				</FB>
+				<FB Name="BOOL2BOOL_5" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="4153.333333333334">
+				</FB>
+				<FB Name="BOOL2BOOL_6" Type="BOOL2BOOL" Comment="" x="2726.666666666667" y="4953.333333333334">
+				</FB>
+				<FB Name="BOOL2BOOL_7" Type="BOOL2BOOL" Comment="" x="19866.666666666668" y="15600.0">
+					<Parameter Name="IN" Value="0"/>
+				</FB>
+				<FB Name="BOOL2BOOL_8" Type="BOOL2BOOL" Comment="" x="19866.666666666668" y="16400.0">
+					<Parameter Name="IN" Value="0"/>
+				</FB>
+				<FB Name="BOOL2BOOL_9" Type="BOOL2BOOL" Comment="" x="19866.666666666668" y="17333.333333333336">
+					<Parameter Name="IN" Value="0"/>
+				</FB>
+				<FB Name="BOOL2BOOL_10" Type="BOOL2BOOL" Comment="" x="20000.0" y="5200.0">
+					<Parameter Name="IN" Value="0"/>
+				</FB>
+				<FB Name="BOOL2BOOL_11" Type="BOOL2BOOL" Comment="" x="20000.0" y="6133.333333333334">
+					<Parameter Name="IN" Value="0"/>
+				</FB>
+				<SubApp Name="Start" Type="OPC_SUB_1_FixID" Comment="" x="866.6666666666667" y="40.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;start&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="STOP_BLADE" Type="OPC_PUB_1_FixID" Comment="" x="893.3333333333334" y="8020.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;stop_blade&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="BOOL2BOOL_18" Type="BOOL2BOOL" Comment="" x="19733.333333333336" y="13200.0">
+				</FB>
+				<FB Name="E_R_TRIG_2" Type="E_R_TRIG" Comment="" x="0.0" y="7600.0">
+				</FB>
+				<FB Name="Is_running" Type="E_RS" Comment="" x="1600.0" y="8000.0">
+				</FB>
+				<FB Name="E_F_TRIG" Type="E_F_TRIG" Comment="" x="0.0" y="8533.333333333334">
+				</FB>
+				<FB Name="Is_running_NOT" Type="F_NOT" Comment="" x="2800.0" y="8000.0">
+				</FB>
+				<FB Name="UINT2UINT" Type="F_DINT_TO_UINT" Comment="" x="2453.3333333333335" y="113.33333333333334">
+				</FB>
+				<FB Name="E_R_TRIG_1" Type="E_R_TRIG" Comment="" x="0.0" y="9600.0">
+				</FB>
+				<SubApp Name="Sorter_1" Type="Sorter" Comment="" x="993.3333333333334" y="2220.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="Prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="CountVar" Value="&quot;counter_1&quot;"/>
+					<Parameter Name="BeltVar" Value="&quot;sorter_1_belt&quot;"/>
+					<Parameter Name="TurnVar" Value="&quot;sorter_1_turn&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="Sorter_2" Type="Sorter" Comment="" x="993.3333333333334" y="4086.666666666667">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="Prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="CountVar" Value="&quot;counter_2&quot;"/>
+					<Parameter Name="BeltVar" Value="&quot;sorter_2_belt&quot;"/>
+					<Parameter Name="TurnVar" Value="&quot;sorter_2_turn&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="Sorter_3" Type="Sorter" Comment="" x="993.3333333333334" y="5953.333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="Prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="CountVar" Value="&quot;counter_3&quot;"/>
+					<Parameter Name="BeltVar" Value="&quot;sorter_3_belt&quot;"/>
+					<Parameter Name="TurnVar" Value="&quot;sorter_3_turn&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="OPC_PUB_1_FixID" Type="OPC_PUB_1_FixID" Comment="" x="5600.0" y="4266.666666666667">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_1&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="OPC_PUB_1_FixID_1" Type="OPC_PUB_1_FixID" Comment="" x="5600.0" y="5466.666666666667">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_2&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="OPC_PUB_1_FixID_2" Type="OPC_PUB_1_FixID" Comment="" x="5600.0" y="6666.666666666667">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_3&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="F_SEL" Type="F_SEL" Comment="" x="2266.666666666667" y="5066.666666666667">
+					<Parameter Name="IN0" Value="UINT#1"/>
+				</FB>
+				<FB Name="UINT2UINT_1" Type="UINT2UINT" Comment="" x="3600.0" y="5200.0">
+				</FB>
+				<SubApp Name="OPC_SUB_1_FixID" Type="OPC_SUB_1_FixID" Comment="" x="486.6666666666667" y="266.6666666666667">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;C1&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="UINT2UINT_6" Type="UINT2UINT" Comment="" x="2353.3333333333335" y="266.6666666666667">
+				</FB>
+				<SubApp Name="OPC_SUB_1_FixID_1" Type="OPC_SUB_1_FixID" Comment="" x="353.33333333333337" y="1733.3333333333335">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;C2&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="UINT2UINT_9" Type="UINT2UINT" Comment="" x="2000.0" y="1886.6666666666667">
+				</FB>
+				<SubApp Name="OPC_SUB_1_FixID_2" Type="OPC_SUB_1_FixID" Comment="" x="353.33333333333337" y="3200.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;C3&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="UINT2UINT_10" Type="UINT2UINT" Comment="" x="2220.0" y="3200.0">
+				</FB>
+				<EventConnections>
+					<Connection Source="START.COLD" Destination="FIO.INIT" Comment=""/>
+					<Connection Source="BOOL2BOOL.CNF" Destination="E_R_TRIG.EI" Comment=""/>
+					<Connection Source="FIO.INITO" Destination="UPC_PUB_FIO.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="Start_Light.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="Reset_Light.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="Stop_Light.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="ENTRY_CONVEYOR.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="EXIT_CONVEYOR.INIT" Comment=""/>
+					<Connection Source="At_Exit.IND" Destination="BOOL2BOOL.REQ" Comment=""/>
+					<Connection Source="START.COLD" Destination="At_Exit.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="Vison_Sensor.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="Stop.INIT" Comment=""/>
+					<Connection Source="Reset.IND" Destination="BOOL2BOOL_1.REQ" Comment=""/>
+					<Connection Source="START.COLD" Destination="Reset.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="Emergency_Stop.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="Auto.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="Manual.INIT" Comment=""/>
+					<Connection Source="Stop.IND" Destination="BOOL2BOOL_3.REQ" Comment=""/>
+					<Connection Source="Emergency_Stop.IND" Destination="BOOL2BOOL_4.REQ" Comment=""/>
+					<Connection Source="Auto.IND" Destination="BOOL2BOOL_5.REQ" Comment=""/>
+					<Connection Source="Manual.IND" Destination="BOOL2BOOL_6.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_7.CNF" Destination="Start_Light.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_8.CNF" Destination="Reset_Light.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_9.CNF" Destination="Stop_Light.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_10.CNF" Destination="ENTRY_CONVEYOR.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_11.CNF" Destination="EXIT_CONVEYOR.REQ" Comment=""/>
+					<Connection Source="Start.IND" Destination="BOOL2BOOL_2.REQ" Comment=""/>
+					<Connection Source="START.COLD" Destination="Start.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="STOP_BLADE.INIT" Comment=""/>
+					<Connection Source="BOOL2BOOL_18.CNF" Destination="STOP_BLADE.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_2.CNF" Destination="E_R_TRIG_2.EI" Comment=""/>
+					<Connection Source="E_R_TRIG_2.EO" Destination="Is_running.S" Comment=""/>
+					<Connection Source="Is_running.EO" Destination="BOOL2BOOL_7.REQ" Comment="">
+						<Attribute Name="Visible" Type="STRING" Value="false"/>
+					</Connection>
+					<Connection Source="Is_running.EO" Destination="BOOL2BOOL_10.REQ" Comment="">
+						<Attribute Name="Visible" Type="STRING" Value="false"/>
+					</Connection>
+					<Connection Source="Is_running.EO" Destination="BOOL2BOOL_11.REQ" Comment="">
+						<Attribute Name="Visible" Type="STRING" Value="false"/>
+					</Connection>
+					<Connection Source="BOOL2BOOL_3.CNF" Destination="E_F_TRIG.EI" Comment=""/>
+					<Connection Source="E_F_TRIG.EO" Destination="Is_running.R" Comment=""/>
+					<Connection Source="Is_running.EO" Destination="Is_running_NOT.REQ" Comment=""/>
+					<Connection Source="Is_running_NOT.CNF" Destination="BOOL2BOOL_9.REQ" Comment="">
+						<Attribute Name="Visible" Type="STRING" Value="false"/>
+					</Connection>
+					<Connection Source="Is_running_NOT.CNF" Destination="BOOL2BOOL_18.REQ" Comment="">
+						<Attribute Name="Visible" Type="STRING" Value="false"/>
+					</Connection>
+					<Connection Source="Vison_Sensor.IND" Destination="UINT2UINT.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_1.CNF" Destination="E_R_TRIG_1.EI" Comment=""/>
+					<Connection Source="START.COLD" Destination="Sorter_1.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="Sorter_2.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="Sorter_3.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="OPC_PUB_1_FixID.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="OPC_PUB_1_FixID_1.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="OPC_PUB_1_FixID_2.INIT" Comment=""/>
+					<Connection Source="Is_running.EO" Destination="F_SEL.REQ" Comment=""/>
+					<Connection Source="UINT2UINT.CNF" Destination="F_SEL.REQ" Comment=""/>
+					<Connection Source="F_SEL.CNF" Destination="UINT2UINT_1.REQ" Comment=""/>
+					<Connection Source="UINT2UINT_1.CNF" Destination="OPC_PUB_1_FixID.REQ" Comment=""/>
+					<Connection Source="UINT2UINT_1.CNF" Destination="OPC_PUB_1_FixID_1.REQ" Comment=""/>
+					<Connection Source="UINT2UINT_1.CNF" Destination="OPC_PUB_1_FixID_2.REQ" Comment=""/>
+					<Connection Source="UPC_PUB_FIO.INITO" Destination="OPC_SUB_1_FixID.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_1_FixID.IND" Destination="UINT2UINT_6.REQ" Comment=""/>
+					<Connection Source="UINT2UINT_6.CNF" Destination="Sorter_1.CNT" Comment=""/>
+					<Connection Source="OPC_SUB_1_FixID.INITO" Destination="OPC_SUB_1_FixID_1.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_1_FixID_1.IND" Destination="UINT2UINT_9.REQ" Comment=""/>
+					<Connection Source="UINT2UINT_9.CNF" Destination="Sorter_2.CNT" Comment=""/>
+					<Connection Source="OPC_SUB_1_FixID_1.INITO" Destination="OPC_SUB_1_FixID_2.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_1_FixID_2.IND" Destination="UINT2UINT_10.REQ" Comment=""/>
+					<Connection Source="UINT2UINT_10.CNF" Destination="Sorter_3.CNT" Comment=""/>
+				</EventConnections>
+				<DataConnections>
+					<Connection Source="BOOL2BOOL.OUT" Destination="E_R_TRIG.QI" Comment=""/>
+					<Connection Source="At_Exit.value" Destination="BOOL2BOOL.IN" Comment=""/>
+					<Connection Source="Reset.value" Destination="BOOL2BOOL_1.IN" Comment=""/>
+					<Connection Source="Stop.value" Destination="BOOL2BOOL_3.IN" Comment=""/>
+					<Connection Source="Emergency_Stop.value" Destination="BOOL2BOOL_4.IN" Comment=""/>
+					<Connection Source="Auto.value" Destination="BOOL2BOOL_5.IN" Comment=""/>
+					<Connection Source="Manual.value" Destination="BOOL2BOOL_6.IN" Comment=""/>
+					<Connection Source="BOOL2BOOL_7.OUT" Destination="Start_Light.value" Comment=""/>
+					<Connection Source="BOOL2BOOL_8.OUT" Destination="Reset_Light.value" Comment=""/>
+					<Connection Source="BOOL2BOOL_9.OUT" Destination="Stop_Light.value" Comment=""/>
+					<Connection Source="BOOL2BOOL_10.OUT" Destination="ENTRY_CONVEYOR.value" Comment=""/>
+					<Connection Source="BOOL2BOOL_11.OUT" Destination="EXIT_CONVEYOR.value" Comment=""/>
+					<Connection Source="Start.value" Destination="BOOL2BOOL_2.IN" Comment=""/>
+					<Connection Source="BOOL2BOOL_18.OUT" Destination="STOP_BLADE.value" Comment=""/>
+					<Connection Source="BOOL2BOOL_2.OUT" Destination="E_R_TRIG_2.QI" Comment=""/>
+					<Connection Source="Is_running.Q" Destination="BOOL2BOOL_7.IN" Comment="">
+						<Attribute Name="Visible" Type="STRING" Value="false"/>
+					</Connection>
+					<Connection Source="Is_running.Q" Destination="BOOL2BOOL_10.IN" Comment="">
+						<Attribute Name="Visible" Type="STRING" Value="false"/>
+					</Connection>
+					<Connection Source="Is_running.Q" Destination="BOOL2BOOL_11.IN" Comment="">
+						<Attribute Name="Visible" Type="STRING" Value="false"/>
+					</Connection>
+					<Connection Source="BOOL2BOOL_3.OUT" Destination="E_F_TRIG.QI" Comment=""/>
+					<Connection Source="Is_running.Q" Destination="Is_running_NOT.IN" Comment=""/>
+					<Connection Source="Is_running_NOT.OUT" Destination="BOOL2BOOL_9.IN" Comment="">
+						<Attribute Name="Visible" Type="STRING" Value="false"/>
+					</Connection>
+					<Connection Source="Is_running_NOT.OUT" Destination="BOOL2BOOL_18.IN" Comment="">
+						<Attribute Name="Visible" Type="STRING" Value="false"/>
+					</Connection>
+					<Connection Source="Vison_Sensor.value" Destination="UINT2UINT.IN" Comment=""/>
+					<Connection Source="BOOL2BOOL_1.OUT" Destination="E_R_TRIG_1.QI" Comment=""/>
+					<Connection Source="Is_running.Q" Destination="F_SEL.G" Comment=""/>
+					<Connection Source="UINT2UINT.OUT" Destination="F_SEL.IN1" Comment=""/>
+					<Connection Source="F_SEL.OUT" Destination="UINT2UINT_1.IN" Comment=""/>
+					<Connection Source="UINT2UINT_1.OUT" Destination="OPC_PUB_1_FixID.value" Comment=""/>
+					<Connection Source="UINT2UINT_1.OUT" Destination="OPC_PUB_1_FixID_1.value" Comment=""/>
+					<Connection Source="UINT2UINT_1.OUT" Destination="OPC_PUB_1_FixID_2.value" Comment=""/>
+					<Connection Source="OPC_SUB_1_FixID.value" Destination="UINT2UINT_6.IN" Comment=""/>
+					<Connection Source="UINT2UINT_6.OUT" Destination="Sorter_1.Counter" Comment=""/>
+					<Connection Source="OPC_SUB_1_FixID_1.value" Destination="UINT2UINT_9.IN" Comment=""/>
+					<Connection Source="UINT2UINT_9.OUT" Destination="Sorter_2.Counter" Comment=""/>
+					<Connection Source="OPC_SUB_1_FixID_2.value" Destination="UINT2UINT_10.IN" Comment=""/>
+					<Connection Source="UINT2UINT_10.OUT" Destination="Sorter_3.Counter" Comment=""/>
+				</DataConnections>
+			</FBNetwork>
+		</Resource>
+		<Resource Name="CPU2" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+			<FBNetwork>
+			</FBNetwork>
+		</Resource>
+	</Device>
+	<Device Name="SorterUnit1" Type="FORTE_PC" Comment="" x="1333.3333333333335" y="5333.333333333334">
+		<Parameter Name="MGR_ID" Value="&quot;localhost:61601&quot;"/>
+		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC"/>
+		<Attribute Name="Color" Type="STRING" Value="178,107,238"/>
+		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+			<FBNetwork>
+				<SubApp Name="OPC_PUB_EX_1" Type="OPC_PUB_EX_1" Comment="" x="15600.0" y="4000.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_1_belt&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="OPC_PUB_EX_2" Type="OPC_PUB_EX_1" Comment="" x="15600.0" y="5200.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_1_turn&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="OPC_SUB_EX_4" Type="OPC_SUB_EX_1" Comment="" x="8400.0" y="4133.333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_1&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="SorterLogic" Type="SorterLogic" Comment="" x="11866.666666666668" y="4400.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="PackageNum" Value="UINT#1"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="UINT2UINT_2" Type="UINT2UINT" Comment="" x="10133.333333333334" y="4533.333333333334">
+				</FB>
+				<FB Name="BOOL2BOOL_12" Type="BOOL2BOOL" Comment="" x="13466.666666666668" y="4533.333333333334">
+				</FB>
+				<SubApp Name="OPC_SUB_EX_7" Type="OPC_SUB_EX_1" Comment="" x="8400.0" y="5333.333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;at_exit&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="OPC_PUB_EX_7" Type="OPC_PUB_EX_1" Comment="" x="15600.0" y="6400.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;C1&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="BOOL2BOOL_15" Type="BOOL2BOOL" Comment="" x="10000.0" y="5866.666666666667">
+				</FB>
+				<FB Name="UINT2UINT_5" Type="UINT2UINT" Comment="" x="13466.666666666668" y="6800.0">
+				</FB>
+				<FB Name="BOOL2BOOL_19" Type="BOOL2BOOL" Comment="" x="10000.0" y="7066.666666666667">
+				</FB>
+				<FB Name="E_R_TRIG_3" Type="E_R_TRIG" Comment="" x="11226.666666666668" y="7020.0">
+				</FB>
+				<SubApp Name="OPC_SUB_EX_1" Type="OPC_SUB_EX_1" Comment="" x="8400.0" y="6666.666666666667">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;reset&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<EventConnections>
+					<Connection Source="OPC_PUB_EX_1.INITO" Destination="OPC_PUB_EX_2.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_EX_4.INITO" Destination="OPC_PUB_EX_1.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="OPC_SUB_EX_4.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_EX_4.IND" Destination="UINT2UINT_2.REQ" Comment=""/>
+					<Connection Source="UINT2UINT_2.CNF" Destination="SorterLogic.IND" Comment=""/>
+					<Connection Source="SorterLogic.CNF" Destination="BOOL2BOOL_12.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_12.CNF" Destination="OPC_PUB_EX_1.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_12.CNF" Destination="OPC_PUB_EX_2.REQ" Comment=""/>
+					<Connection Source="OPC_SUB_EX_4.INITO" Destination="OPC_SUB_EX_7.INIT" Comment=""/>
+					<Connection Source="OPC_PUB_EX_2.INITO" Destination="OPC_PUB_EX_7.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_EX_7.IND" Destination="BOOL2BOOL_15.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_15.CNF" Destination="SorterLogic.C" Comment=""/>
+					<Connection Source="SorterLogic.CNT" Destination="UINT2UINT_5.REQ" Comment=""/>
+					<Connection Source="UINT2UINT_5.CNF" Destination="OPC_PUB_EX_7.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_19.CNF" Destination="E_R_TRIG_3.EI" Comment=""/>
+					<Connection Source="OPC_SUB_EX_1.IND" Destination="BOOL2BOOL_19.REQ" Comment=""/>
+					<Connection Source="E_R_TRIG_3.EO" Destination="SorterLogic.ResetC" Comment=""/>
+					<Connection Source="OPC_SUB_EX_7.INITO" Destination="OPC_SUB_EX_1.INIT" Comment=""/>
+				</EventConnections>
+				<DataConnections>
+					<Connection Source="OPC_SUB_EX_4.value" Destination="UINT2UINT_2.IN" Comment=""/>
+					<Connection Source="UINT2UINT_2.OUT" Destination="SorterLogic.value" Comment=""/>
+					<Connection Source="SorterLogic.OUT" Destination="BOOL2BOOL_12.IN" Comment=""/>
+					<Connection Source="BOOL2BOOL_12.OUT" Destination="OPC_PUB_EX_1.value" Comment=""/>
+					<Connection Source="BOOL2BOOL_12.OUT" Destination="OPC_PUB_EX_2.value" Comment=""/>
+					<Connection Source="OPC_SUB_EX_7.value" Destination="BOOL2BOOL_15.IN" Comment=""/>
+					<Connection Source="BOOL2BOOL_15.OUT" Destination="SorterLogic.AtExit" Comment=""/>
+					<Connection Source="SorterLogic.CV" Destination="UINT2UINT_5.IN" Comment=""/>
+					<Connection Source="UINT2UINT_5.OUT" Destination="OPC_PUB_EX_7.value" Comment=""/>
+					<Connection Source="BOOL2BOOL_19.OUT" Destination="E_R_TRIG_3.QI" Comment=""/>
+					<Connection Source="OPC_SUB_EX_1.value" Destination="BOOL2BOOL_19.IN" Comment=""/>
+				</DataConnections>
+			</FBNetwork>
+		</Resource>
+	</Device>
+	<Device Name="SorterUnit2" Type="FORTE_PC" Comment="" x="1333.3333333333335" y="6133.333333333334">
+		<Parameter Name="MGR_ID" Value="&quot;localhost:61602&quot;"/>
+		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC"/>
+		<Attribute Name="Color" Type="STRING" Value="92,218,124"/>
+		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+			<FBNetwork>
+				<SubApp Name="OPC_SUB_EX_5" Type="OPC_SUB_EX_1" Comment="" x="8533.333333333334" y="8400.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_2&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="OPC_PUB_EX_3" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="8133.333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_2_belt&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="OPC_PUB_EX_4" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="9333.333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_2_turn&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="UINT2UINT_3" Type="UINT2UINT" Comment="" x="10000.0" y="8933.333333333334">
+				</FB>
+				<SubApp Name="SorterLogic_3" Type="SorterLogic" Comment="" x="12000.0" y="8800.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="PackageNum" Value="UINT#2"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="BOOL2BOOL_13" Type="BOOL2BOOL" Comment="" x="13600.0" y="8933.333333333334">
+				</FB>
+				<SubApp Name="OPC_SUB_EX_8" Type="OPC_SUB_EX_1" Comment="" x="8460.0" y="9873.333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;at_exit&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="BOOL2BOOL_16" Type="BOOL2BOOL" Comment="" x="10060.0" y="10406.666666666668">
+				</FB>
+				<FB Name="UINT2UINT_7" Type="UINT2UINT" Comment="" x="13600.0" y="11066.666666666668">
+				</FB>
+				<SubApp Name="OPC_PUB_EX_8" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="10666.666666666668">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;C2&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="OPC_SUB_EX_2" Type="OPC_SUB_EX_1" Comment="" x="8533.333333333334" y="11066.666666666668">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;reset&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="E_R_TRIG_4" Type="E_R_TRIG" Comment="" x="11360.0" y="11420.0">
+				</FB>
+				<FB Name="BOOL2BOOL_20" Type="BOOL2BOOL" Comment="" x="10133.333333333334" y="11466.666666666668">
+				</FB>
+				<EventConnections>
+					<Connection Source="START.COLD" Destination="OPC_SUB_EX_5.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_EX_5.INITO" Destination="OPC_PUB_EX_3.INIT" Comment=""/>
+					<Connection Source="OPC_PUB_EX_3.INITO" Destination="OPC_PUB_EX_4.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_EX_5.IND" Destination="UINT2UINT_3.REQ" Comment=""/>
+					<Connection Source="UINT2UINT_3.CNF" Destination="SorterLogic_3.IND" Comment=""/>
+					<Connection Source="SorterLogic_3.CNF" Destination="BOOL2BOOL_13.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_13.CNF" Destination="OPC_PUB_EX_3.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_13.CNF" Destination="OPC_PUB_EX_4.REQ" Comment=""/>
+					<Connection Source="OPC_SUB_EX_5.INITO" Destination="OPC_SUB_EX_8.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_EX_8.IND" Destination="BOOL2BOOL_16.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_16.CNF" Destination="SorterLogic_3.C" Comment=""/>
+					<Connection Source="SorterLogic_3.CNT" Destination="UINT2UINT_7.REQ" Comment=""/>
+					<Connection Source="OPC_PUB_EX_4.INITO" Destination="OPC_PUB_EX_8.INIT" Comment=""/>
+					<Connection Source="UINT2UINT_7.CNF" Destination="OPC_PUB_EX_8.REQ" Comment=""/>
+					<Connection Source="OPC_SUB_EX_8.INITO" Destination="OPC_SUB_EX_2.INIT" Comment=""/>
+					<Connection Source="E_R_TRIG_4.EO" Destination="SorterLogic_3.ResetC" Comment=""/>
+					<Connection Source="OPC_SUB_EX_2.IND" Destination="BOOL2BOOL_20.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_20.CNF" Destination="E_R_TRIG_4.EI" Comment=""/>
+				</EventConnections>
+				<DataConnections>
+					<Connection Source="OPC_SUB_EX_5.value" Destination="UINT2UINT_3.IN" Comment=""/>
+					<Connection Source="UINT2UINT_3.OUT" Destination="SorterLogic_3.value" Comment=""/>
+					<Connection Source="SorterLogic_3.OUT" Destination="BOOL2BOOL_13.IN" Comment=""/>
+					<Connection Source="BOOL2BOOL_13.OUT" Destination="OPC_PUB_EX_3.value" Comment=""/>
+					<Connection Source="BOOL2BOOL_13.OUT" Destination="OPC_PUB_EX_4.value" Comment=""/>
+					<Connection Source="OPC_SUB_EX_8.value" Destination="BOOL2BOOL_16.IN" Comment=""/>
+					<Connection Source="BOOL2BOOL_16.OUT" Destination="SorterLogic_3.AtExit" Comment=""/>
+					<Connection Source="SorterLogic_3.CV" Destination="UINT2UINT_7.IN" Comment=""/>
+					<Connection Source="UINT2UINT_7.OUT" Destination="OPC_PUB_EX_8.value" Comment=""/>
+					<Connection Source="OPC_SUB_EX_2.value" Destination="BOOL2BOOL_20.IN" Comment=""/>
+					<Connection Source="BOOL2BOOL_20.OUT" Destination="E_R_TRIG_4.QI" Comment=""/>
+				</DataConnections>
+			</FBNetwork>
+		</Resource>
+	</Device>
+	<Device Name="SorterUnit3" Type="FORTE_PC" Comment="" x="1333.3333333333335" y="6933.333333333334">
+		<Parameter Name="MGR_ID" Value="&quot;localhost:61603&quot;"/>
+		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC"/>
+		<Attribute Name="Color" Type="STRING" Value="239,117,121"/>
+		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0.0" y="0.0">
+			<FBNetwork>
+				<SubApp Name="OPC_PUB_EX_5" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="12400.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_3_belt&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="OPC_SUB_EX_6" Type="OPC_SUB_EX_1" Comment="" x="8533.333333333334" y="12533.333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_3&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<SubApp Name="OPC_PUB_EX_6" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="13600.0">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_Q_&quot;"/>
+					<Parameter Name="var1" Value="&quot;sorter_3_turn&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="UINT2UINT_4" Type="UINT2UINT" Comment="" x="10000.0" y="13066.666666666668">
+				</FB>
+				<SubApp Name="SorterLogic_1" Type="SorterLogic" Comment="" x="11733.333333333334" y="12933.333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="PackageNum" Value="UINT#3"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="BOOL2BOOL_14" Type="BOOL2BOOL" Comment="" x="13333.333333333334" y="13066.666666666668">
+				</FB>
+				<SubApp Name="OPC_SUB_EX_9" Type="OPC_SUB_EX_1" Comment="" x="8533.333333333334" y="14133.333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;at_exit&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="BOOL2BOOL_17" Type="BOOL2BOOL" Comment="" x="10133.333333333334" y="14666.666666666668">
+				</FB>
+				<FB Name="UINT2UINT_8" Type="UINT2UINT" Comment="" x="13600.0" y="15333.333333333334">
+				</FB>
+				<SubApp Name="OPC_PUB_EX_9" Type="OPC_PUB_EX_1" Comment="" x="15733.333333333334" y="14933.333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;CON_&quot;"/>
+					<Parameter Name="var1" Value="&quot;C3&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<FB Name="E_R_TRIG_5" Type="E_R_TRIG" Comment="" x="11360.0" y="16086.666666666668">
+				</FB>
+				<FB Name="BOOL2BOOL_21" Type="BOOL2BOOL" Comment="" x="10133.333333333334" y="16133.333333333334">
+				</FB>
+				<SubApp Name="OPC_SUB_EX_3" Type="OPC_SUB_EX_1" Comment="" x="8533.333333333334" y="15733.333333333334">
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+					<Parameter Name="QI" Value="1"/>
+					<Parameter Name="prefix" Value="&quot;FIO_I_&quot;"/>
+					<Parameter Name="var1" Value="&quot;reset&quot;"/>
+					<Parameter Name="server" Value="WSTRING#&quot;localhost:4840&quot;"/>
+					<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+					<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+				</SubApp>
+				<EventConnections>
+					<Connection Source="OPC_SUB_EX_6.INITO" Destination="OPC_PUB_EX_5.INIT" Comment=""/>
+					<Connection Source="START.COLD" Destination="OPC_SUB_EX_6.INIT" Comment=""/>
+					<Connection Source="OPC_PUB_EX_5.INITO" Destination="OPC_PUB_EX_6.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_EX_6.IND" Destination="UINT2UINT_4.REQ" Comment=""/>
+					<Connection Source="UINT2UINT_4.CNF" Destination="SorterLogic_1.IND" Comment=""/>
+					<Connection Source="SorterLogic_1.CNF" Destination="BOOL2BOOL_14.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_14.CNF" Destination="OPC_PUB_EX_5.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_14.CNF" Destination="OPC_PUB_EX_6.REQ" Comment=""/>
+					<Connection Source="OPC_SUB_EX_6.INITO" Destination="OPC_SUB_EX_9.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_EX_9.IND" Destination="BOOL2BOOL_17.REQ" Comment=""/>
+					<Connection Source="BOOL2BOOL_17.CNF" Destination="SorterLogic_1.C" Comment=""/>
+					<Connection Source="SorterLogic_1.CNT" Destination="UINT2UINT_8.REQ" Comment=""/>
+					<Connection Source="OPC_PUB_EX_6.CNF" Destination="OPC_PUB_EX_9.INIT" Comment=""/>
+					<Connection Source="UINT2UINT_8.CNF" Destination="OPC_PUB_EX_9.REQ" Comment=""/>
+					<Connection Source="E_R_TRIG_5.EO" Destination="SorterLogic_1.ResetC" Comment=""/>
+					<Connection Source="BOOL2BOOL_21.CNF" Destination="E_R_TRIG_5.EI" Comment=""/>
+					<Connection Source="OPC_SUB_EX_9.INITO" Destination="OPC_SUB_EX_3.INIT" Comment=""/>
+					<Connection Source="OPC_SUB_EX_3.IND" Destination="BOOL2BOOL_21.REQ" Comment=""/>
+				</EventConnections>
+				<DataConnections>
+					<Connection Source="OPC_SUB_EX_6.value" Destination="UINT2UINT_4.IN" Comment=""/>
+					<Connection Source="UINT2UINT_4.OUT" Destination="SorterLogic_1.value" Comment=""/>
+					<Connection Source="SorterLogic_1.OUT" Destination="BOOL2BOOL_14.IN" Comment=""/>
+					<Connection Source="BOOL2BOOL_14.OUT" Destination="OPC_PUB_EX_5.value" Comment=""/>
+					<Connection Source="BOOL2BOOL_14.OUT" Destination="OPC_PUB_EX_6.value" Comment=""/>
+					<Connection Source="OPC_SUB_EX_9.value" Destination="BOOL2BOOL_17.IN" Comment=""/>
+					<Connection Source="BOOL2BOOL_17.OUT" Destination="SorterLogic_1.AtExit" Comment=""/>
+					<Connection Source="SorterLogic_1.CV" Destination="UINT2UINT_8.IN" Comment=""/>
+					<Connection Source="UINT2UINT_8.OUT" Destination="OPC_PUB_EX_9.value" Comment=""/>
+					<Connection Source="BOOL2BOOL_21.OUT" Destination="E_R_TRIG_5.QI" Comment=""/>
+					<Connection Source="OPC_SUB_EX_3.value" Destination="BOOL2BOOL_21.IN" Comment=""/>
+				</DataConnections>
+			</FBNetwork>
+		</Resource>
+	</Device>
+	<Mapping From="Sorting_Station.FIO" To="PLC.CPU1.FIO"/>
+	<Mapping From="Sorting_Station.E_R_TRIG" To="PLC.CPU1.E_R_TRIG"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL" To="PLC.CPU1.BOOL2BOOL"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_1" To="PLC.CPU1.BOOL2BOOL_1"/>
+	<Mapping From="Sorting_Station.UPC_PUB_FIO" To="PLC.CPU1.UPC_PUB_FIO"/>
+	<Mapping From="Sorting_Station.Start_Light" To="PLC.CPU1.Start_Light"/>
+	<Mapping From="Sorting_Station.Reset_Light" To="PLC.CPU1.Reset_Light"/>
+	<Mapping From="Sorting_Station.Stop_Light" To="PLC.CPU1.Stop_Light"/>
+	<Mapping From="Sorting_Station.ENTRY_CONVEYOR" To="PLC.CPU1.ENTRY_CONVEYOR"/>
+	<Mapping From="Sorting_Station.EXIT_CONVEYOR" To="PLC.CPU1.EXIT_CONVEYOR"/>
+	<Mapping From="Sorting_Station.At_Exit" To="PLC.CPU1.At_Exit"/>
+	<Mapping From="Sorting_Station.Vison_Sensor" To="PLC.CPU1.Vison_Sensor"/>
+	<Mapping From="Sorting_Station.Stop" To="PLC.CPU1.Stop"/>
+	<Mapping From="Sorting_Station.Reset" To="PLC.CPU1.Reset"/>
+	<Mapping From="Sorting_Station.Emergency_Stop" To="PLC.CPU1.Emergency_Stop"/>
+	<Mapping From="Sorting_Station.Auto" To="PLC.CPU1.Auto"/>
+	<Mapping From="Sorting_Station.Manual" To="PLC.CPU1.Manual"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_2" To="PLC.CPU1.BOOL2BOOL_2"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_3" To="PLC.CPU1.BOOL2BOOL_3"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_4" To="PLC.CPU1.BOOL2BOOL_4"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_5" To="PLC.CPU1.BOOL2BOOL_5"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_6" To="PLC.CPU1.BOOL2BOOL_6"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_7" To="PLC.CPU1.BOOL2BOOL_7"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_8" To="PLC.CPU1.BOOL2BOOL_8"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_9" To="PLC.CPU1.BOOL2BOOL_9"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_10" To="PLC.CPU1.BOOL2BOOL_10"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_11" To="PLC.CPU1.BOOL2BOOL_11"/>
+	<Mapping From="Sorting_Station.Start" To="PLC.CPU1.Start"/>
+	<Mapping From="Sorting_Station.STOP_BLADE" To="PLC.CPU1.STOP_BLADE"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_18" To="PLC.CPU1.BOOL2BOOL_18"/>
+	<Mapping From="Sorting_Station.E_R_TRIG_2" To="PLC.CPU1.E_R_TRIG_2"/>
+	<Mapping From="Sorting_Station.Is_running" To="PLC.CPU1.Is_running"/>
+	<Mapping From="Sorting_Station.E_F_TRIG" To="PLC.CPU1.E_F_TRIG"/>
+	<Mapping From="Sorting_Station.Is_running_NOT" To="PLC.CPU1.Is_running_NOT"/>
+	<Mapping From="Sorting_Station.UINT2UINT" To="PLC.CPU1.UINT2UINT"/>
+	<Mapping From="Sorting_Station.E_R_TRIG_1" To="PLC.CPU1.E_R_TRIG_1"/>
+	<Mapping From="Sorting_Station.Sorter_1" To="PLC.CPU1.Sorter_1"/>
+	<Mapping From="Sorting_Station.Sorter_2" To="PLC.CPU1.Sorter_2"/>
+	<Mapping From="Sorting_Station.Sorter_3" To="PLC.CPU1.Sorter_3"/>
+	<Mapping From="Sorting_Station.OPC_PUB_1_FixID" To="PLC.CPU1.OPC_PUB_1_FixID"/>
+	<Mapping From="Sorting_Station.OPC_PUB_EX_1" To="SorterUnit1.EMB_RES.OPC_PUB_EX_1"/>
+	<Mapping From="Sorting_Station.OPC_PUB_EX_2" To="SorterUnit1.EMB_RES.OPC_PUB_EX_2"/>
+	<Mapping From="Sorting_Station.OPC_SUB_EX_4" To="SorterUnit1.EMB_RES.OPC_SUB_EX_4"/>
+	<Mapping From="Sorting_Station.OPC_SUB_EX_5" To="SorterUnit2.EMB_RES.OPC_SUB_EX_5"/>
+	<Mapping From="Sorting_Station.OPC_PUB_EX_3" To="SorterUnit2.EMB_RES.OPC_PUB_EX_3"/>
+	<Mapping From="Sorting_Station.OPC_PUB_EX_4" To="SorterUnit2.EMB_RES.OPC_PUB_EX_4"/>
+	<Mapping From="Sorting_Station.OPC_PUB_EX_5" To="SorterUnit3.EMB_RES.OPC_PUB_EX_5"/>
+	<Mapping From="Sorting_Station.OPC_SUB_EX_6" To="SorterUnit3.EMB_RES.OPC_SUB_EX_6"/>
+	<Mapping From="Sorting_Station.OPC_PUB_EX_6" To="SorterUnit3.EMB_RES.OPC_PUB_EX_6"/>
+	<Mapping From="Sorting_Station.OPC_PUB_1_FixID_1" To="PLC.CPU1.OPC_PUB_1_FixID_1"/>
+	<Mapping From="Sorting_Station.OPC_PUB_1_FixID_2" To="PLC.CPU1.OPC_PUB_1_FixID_2"/>
+	<Mapping From="Sorting_Station.F_SEL" To="PLC.CPU1.F_SEL"/>
+	<Mapping From="Sorting_Station.UINT2UINT_1" To="PLC.CPU1.UINT2UINT_1"/>
+	<Mapping From="Sorting_Station.SorterLogic" To="SorterUnit1.EMB_RES.SorterLogic"/>
+	<Mapping From="Sorting_Station.UINT2UINT_2" To="SorterUnit1.EMB_RES.UINT2UINT_2"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_12" To="SorterUnit1.EMB_RES.BOOL2BOOL_12"/>
+	<Mapping From="Sorting_Station.UINT2UINT_3" To="SorterUnit2.EMB_RES.UINT2UINT_3"/>
+	<Mapping From="Sorting_Station.SorterLogic_3" To="SorterUnit2.EMB_RES.SorterLogic_3"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_13" To="SorterUnit2.EMB_RES.BOOL2BOOL_13"/>
+	<Mapping From="Sorting_Station.UINT2UINT_4" To="SorterUnit3.EMB_RES.UINT2UINT_4"/>
+	<Mapping From="Sorting_Station.SorterLogic_1" To="SorterUnit3.EMB_RES.SorterLogic_1"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_14" To="SorterUnit3.EMB_RES.BOOL2BOOL_14"/>
+	<Mapping From="Sorting_Station.OPC_SUB_EX_7" To="SorterUnit1.EMB_RES.OPC_SUB_EX_7"/>
+	<Mapping From="Sorting_Station.OPC_SUB_1_FixID" To="PLC.CPU1.OPC_SUB_1_FixID"/>
+	<Mapping From="Sorting_Station.OPC_PUB_EX_7" To="SorterUnit1.EMB_RES.OPC_PUB_EX_7"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_15" To="SorterUnit1.EMB_RES.BOOL2BOOL_15"/>
+	<Mapping From="Sorting_Station.UINT2UINT_5" To="SorterUnit1.EMB_RES.UINT2UINT_5"/>
+	<Mapping From="Sorting_Station.UINT2UINT_6" To="PLC.CPU1.UINT2UINT_6"/>
+	<Mapping From="Sorting_Station.OPC_SUB_EX_8" To="SorterUnit2.EMB_RES.OPC_SUB_EX_8"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_16" To="SorterUnit2.EMB_RES.BOOL2BOOL_16"/>
+	<Mapping From="Sorting_Station.OPC_SUB_EX_9" To="SorterUnit3.EMB_RES.OPC_SUB_EX_9"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_17" To="SorterUnit3.EMB_RES.BOOL2BOOL_17"/>
+	<Mapping From="Sorting_Station.UINT2UINT_7" To="SorterUnit2.EMB_RES.UINT2UINT_7"/>
+	<Mapping From="Sorting_Station.OPC_PUB_EX_8" To="SorterUnit2.EMB_RES.OPC_PUB_EX_8"/>
+	<Mapping From="Sorting_Station.UINT2UINT_8" To="SorterUnit3.EMB_RES.UINT2UINT_8"/>
+	<Mapping From="Sorting_Station.OPC_PUB_EX_9" To="SorterUnit3.EMB_RES.OPC_PUB_EX_9"/>
+	<Mapping From="Sorting_Station.OPC_SUB_1_FixID_1" To="PLC.CPU1.OPC_SUB_1_FixID_1"/>
+	<Mapping From="Sorting_Station.UINT2UINT_9" To="PLC.CPU1.UINT2UINT_9"/>
+	<Mapping From="Sorting_Station.OPC_SUB_1_FixID_2" To="PLC.CPU1.OPC_SUB_1_FixID_2"/>
+	<Mapping From="Sorting_Station.UINT2UINT_10" To="PLC.CPU1.UINT2UINT_10"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_19" To="SorterUnit1.EMB_RES.BOOL2BOOL_19"/>
+	<Mapping From="Sorting_Station.E_R_TRIG_3" To="SorterUnit1.EMB_RES.E_R_TRIG_3"/>
+	<Mapping From="Sorting_Station.OPC_SUB_EX_1" To="SorterUnit1.EMB_RES.OPC_SUB_EX_1"/>
+	<Mapping From="Sorting_Station.E_R_TRIG_5" To="SorterUnit3.EMB_RES.E_R_TRIG_5"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_21" To="SorterUnit3.EMB_RES.BOOL2BOOL_21"/>
+	<Mapping From="Sorting_Station.OPC_SUB_EX_3" To="SorterUnit3.EMB_RES.OPC_SUB_EX_3"/>
+	<Mapping From="Sorting_Station.OPC_SUB_EX_2" To="SorterUnit2.EMB_RES.OPC_SUB_EX_2"/>
+	<Mapping From="Sorting_Station.E_R_TRIG_4" To="SorterUnit2.EMB_RES.E_R_TRIG_4"/>
+	<Mapping From="Sorting_Station.BOOL2BOOL_20" To="SorterUnit2.EMB_RES.BOOL2BOOL_20"/>
+</System>

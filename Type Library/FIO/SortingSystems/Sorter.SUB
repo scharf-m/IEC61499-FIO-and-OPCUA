@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="Sorter" Comment="Subapplication Type">
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="Maximilian Scharf" Date="2022-11-15">
+	</VersionInfo>
+	<SubAppInterfaceList>
+		<SubAppEventInputs>
+			<SubAppEvent Name="INIT" Type="Event" Comment="">
+			</SubAppEvent>
+			<SubAppEvent Name="CNT" Type="Event" Comment="">
+			</SubAppEvent>
+			<SubAppEvent Name="SBelt" Type="Event" Comment="">
+			</SubAppEvent>
+			<SubAppEvent Name="STurn" Type="Event" Comment="">
+			</SubAppEvent>
+		</SubAppEventInputs>
+		<SubAppEventOutputs>
+			<SubAppEvent Name="INITO" Type="Event" Comment="">
+			</SubAppEvent>
+			<SubAppEvent Name="CNF_Counter" Type="Event" Comment="">
+			</SubAppEvent>
+			<SubAppEvent Name="CNF_Belt" Type="Event" Comment="">
+			</SubAppEvent>
+			<SubAppEvent Name="CNF_Turn" Type="Event" Comment="">
+			</SubAppEvent>
+		</SubAppEventOutputs>
+		<InputVars>
+			<VarDeclaration Name="Prefix" Type="WSTRING" Comment=""/>
+			<VarDeclaration Name="CountVar" Type="WSTRING" Comment=""/>
+			<VarDeclaration Name="BeltVar" Type="WSTRING" Comment=""/>
+			<VarDeclaration Name="TurnVar" Type="WSTRING" Comment=""/>
+			<VarDeclaration Name="Counter" Type="UINT" Comment=""/>
+		</InputVars>
+		<OutputVars>
+			<VarDeclaration Name="QO" Type="BOOL" Comment=""/>
+		</OutputVars>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<FB Name="F_AND" Type="F_AND" Comment="" x="5866.666666666667" y="133.33333333333334">
+		</FB>
+		<FB Name="F_AND_1" Type="F_AND" Comment="" x="7866.666666666667" y="133.33333333333334">
+		</FB>
+		<FB Name="BOOL2BOOL" Type="BOOL2BOOL" Comment="" x="6800.0" y="133.33333333333334">
+		</FB>
+		<FB Name="BOOL2BOOL_1" Type="BOOL2BOOL" Comment="" x="8800.0" y="133.33333333333334">
+		</FB>
+		<SubApp Name="SorterBelt" Type="OPC_SUB_1_FixID" Comment="" x="1600.0" y="400.0">
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			<Parameter Name="QI" Value="1"/>
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+		</SubApp>
+		<SubApp Name="SorterTurn" Type="OPC_SUB_1_FixID" Comment="" x="1600.0" y="1466.6666666666667">
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+			<Parameter Name="QI" Value="1"/>
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+		</SubApp>
+		<FB Name="BOOL2BOOL_2" Type="BOOL2BOOL" Comment="" x="5333.333333333334" y="2000.0">
+		</FB>
+		<FB Name="BOOL2BOOL_3" Type="BOOL2BOOL" Comment="" x="5333.333333333334" y="2666.666666666667">
+		</FB>
+		<SubApp Name="Counter" Type="OPC_PUB_1_FixID" Comment="" x="1600.0" y="-666.6666666666667">
+			<Parameter Name="QI" Value="1"/>
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+		</SubApp>
+		<EventConnections>
+			<Connection Source="F_AND.CNF" Destination="BOOL2BOOL.REQ" Comment=""/>
+			<Connection Source="BOOL2BOOL.CNF" Destination="F_AND_1.REQ" Comment=""/>
+			<Connection Source="F_AND_1.CNF" Destination="BOOL2BOOL_1.REQ" Comment=""/>
+			<Connection Source="BOOL2BOOL_1.CNF" Destination="INITO" Comment="" dx1="286.6666666666667"/>
+			<Connection Source="SorterBelt.IND" Destination="CNF_Belt" Comment="" dx1="266.6666666666667"/>
+			<Connection Source="SorterBelt.INITO" Destination="SorterTurn.INIT" Comment="" dx1="80.0" dx2="80.0" dy="820.0"/>
+			<Connection Source="SorterTurn.INITO" Destination="F_AND.REQ" Comment="" dx1="1253.3333333333335"/>
+			<Connection Source="SorterTurn.IND" Destination="CNF_Turn" Comment="" dx1="373.33333333333337"/>
+			<Connection Source="SorterBelt.IND" Destination="BOOL2BOOL_2.REQ" Comment="" dx1="1320.0"/>
+			<Connection Source="SorterTurn.IND" Destination="BOOL2BOOL_3.REQ" Comment="" dx1="1320.0"/>
+			<Connection Source="INIT" Destination="Counter.INIT" Comment="" dx1="1460.0" dx2="1460.0" dy="0.0"/>
+			<Connection Source="Counter.INITO" Destination="SorterBelt.INIT" Comment="" dx1="80.0" dx2="80.0" dy="820.0"/>
+			<Connection Source="Counter.CNF" Destination="CNF_Counter" Comment="" dx1="193.33333333333334"/>
+			<Connection Source="CNT" Destination="Counter.REQ" Comment="" dx1="1346.6666666666667"/>
+		</EventConnections>
+		<DataConnections>
+			<Connection Source="F_AND.OUT" Destination="BOOL2BOOL.IN" Comment=""/>
+			<Connection Source="BOOL2BOOL.OUT" Destination="F_AND_1.IN1" Comment=""/>
+			<Connection Source="F_AND_1.OUT" Destination="BOOL2BOOL_1.IN" Comment=""/>
+			<Connection Source="BOOL2BOOL_1.OUT" Destination="QO" Comment="" dx1="333.33333333333337"/>
+			<Connection Source="Prefix" Destination="SorterBelt.prefix" Comment="" dx1="406.6666666666667" dx2="406.6666666666667" dy="0.0"/>
+			<Connection Source="BeltVar" Destination="SorterBelt.var1" Comment="" dx1="300.0" dx2="300.0" dy="0.0"/>
+			<Connection Source="SorterBelt.QO" Destination="F_AND.IN2" Comment="" dx1="1253.3333333333335"/>
+			<Connection Source="Prefix" Destination="SorterTurn.prefix" Comment="" dx1="400.0" dx2="400.0" dy="0.0"/>
+			<Connection Source="TurnVar" Destination="SorterTurn.var1" Comment="" dx1="193.33333333333334" dx2="193.33333333333334" dy="0.0"/>
+			<Connection Source="SorterTurn.QO" Destination="F_AND_1.IN2" Comment="" dx1="2253.3333333333335"/>
+			<Connection Source="SorterBelt.value" Destination="BOOL2BOOL_2.IN" Comment="" dx1="1320.0"/>
+			<Connection Source="SorterTurn.value" Destination="BOOL2BOOL_3.IN" Comment="" dx1="1320.0"/>
+			<Connection Source="Prefix" Destination="Counter.prefix" Comment="" dx1="380.0" dx2="380.0" dy="0.0"/>
+			<Connection Source="CountVar" Destination="Counter.var1" Comment="" dx1="326.6666666666667" dx2="326.6666666666667" dy="0.0"/>
+			<Connection Source="Counter.QO" Destination="F_AND.IN1" Comment="" dx1="1253.3333333333335" dx2="1253.3333333333335" dy="0.0"/>
+			<Connection Source="Counter" Destination="Counter.value" Comment="" dx1="1466.6666666666667"/>
+		</DataConnections>
+	</SubAppNetwork>
+</SubAppType>
